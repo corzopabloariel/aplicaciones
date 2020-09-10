@@ -5,24 +5,28 @@
         "name_slug": "accion",
         "data": [
             {
+                "code": "01",
                 "title": "Twister",
                 "year": 1996,
                 "classification": "13+",
                 "resume": "Twister",
                 "duration": "1h 52min"
             }, {
+                "code": "02",
                 "title": "Tropa de Elite",
                 "year": 2007,
                 "classification": "16+",
                 "resume": "Tropa de Elite",
                 "duration": "1h 55min"
             }, {
+                "code": "03",
                 "title": "Los Recolectores",
                 "year": 2010,
                 "classification": "16+",
                 "resume": "Los Recolectores",
                 "duration": "1h 51min"
             }, {
+                "code": "04",
                 "title": "Francotirador",
                 "year": 2014,
                 "classification": "16+",

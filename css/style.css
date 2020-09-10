@@ -1,6 +1,7 @@
 :root {
     --w: 300px;
     --h: 150px;
+    --fz: 17px;
 }
 
 * {
@@ -9,10 +10,37 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--fz);
+    line-height: calc(var(--fz) + 6px);
     background-color: #fefefe;
     color: #232323;
+}
+
+h5 {
+    font-size: calc(var(--fz) + 2px);
+    line-height: calc(var(--fz) + 12px);
+}
+h4 {
+    font-size: calc(var(--fz) + 4px);
+    line-height: calc(var(--fz) + 18px);
+}
+h3 {
+    font-size: calc(var(--fz) + 6px);
+    line-height: calc(var(--fz) + 24px);
+}
+h2 {
+    font-size: calc(var(--fz) + 8px);
+    line-height: calc(var(--fz) + 30px);
+}
+h1 {
+    font-size: calc(var(--fz) + 10px);
+    line-height: calc(var(--fz) + 36px);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 /* ----------------------------------------------- */
 .container {
@@ -28,7 +56,6 @@ body {
     color: #fefefe;
 }
 .header__container {
-    height: inherit;
     width: 90%;
     margin: auto;
 }
@@ -92,6 +119,20 @@ body {
     padding: 10px;
 }
 /* ----------------------------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.grid-element {
+    padding: .7em 1em;
+    border: 1px solid #ccc;
+    background-color: #efefef;
+    border-radius: .3em;
+}
+/* ----------------------------------------------- */
 .btn {
     background-color: transparent;
     border: 1px solid transparent;
@@ -103,6 +144,30 @@ body {
     color: #333333;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.article picture img {
+    width: 100%;
+}
+.article-name {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #232323;
+    color: #f0f0f0;
+    padding: 2em 0;
+}
+
+.container {
+    width: calc(100% - 30px);
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 /*
  * xl 1440
  * l 1024
@@ -110,18 +175,15 @@ body {
  * s 425
  */
 @media (max-width: 1440px) {
-    .container {
-        width: 960px
-    }
 }
 @media (max-width: 1024px) {
-    .container {
-        width: 800px
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 @media (max-width: 768px) {
-    .container {
-        width: 600px
+    .grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 @media (min-width: 500px) {
@@ -150,9 +212,8 @@ body {
     .header__container-position_relative > .btn {
         display: block;
     }
-    .container {
-        width: 90%;
-        margin: auto;
+    .grid {
+        grid-template-columns: 1fr;
     }
 
     .article + .article {
