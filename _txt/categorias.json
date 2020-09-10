@@ -1,0 +1,79 @@
+[
+    {
+        "code": "c01",
+        "name": "Acción",
+        "name_slug": "accion",
+        "data": [
+            {
+                "title": "Twister",
+                "year": 1996,
+                "classification": "13+",
+                "resume": "Twister",
+                "duration": "1h 52min"
+            }, {
+                "title": "Tropa de Elite",
+                "year": 2007,
+                "classification": "16+",
+                "resume": "Tropa de Elite",
+                "duration": "1h 55min"
+            }, {
+                "title": "Los Recolectores",
+                "year": 2010,
+                "classification": "16+",
+                "resume": "Los Recolectores",
+                "duration": "1h 51min"
+            }, {
+                "title": "Francotirador",
+                "year": 2014,
+                "classification": "16+",
+                "resume": "Francotirador",
+                "duration": "2h 12min"
+            }
+        ]
+    }, {
+        "code": "c02",
+        "name": "Ciencia ficción",
+        "name_slug": "ciencia-ficcion",
+        "data": []
+    }, {
+        "code": "c03",
+        "name": "Clásicas",
+        "name_slug": "clasicas",
+        "data": []
+    }, {
+        "code": "c04",
+        "name": "Comecias",
+        "name_slug": "comedias",
+        "data": []
+    }, {
+        "code": "c05",
+        "name": "De argentina",
+        "name_slug": "de-argentina",
+        "data": []
+    }, {
+        "code": "c06",
+        "name": "Deportes",
+        "name_slug": "deportes",
+        "data": []
+    }, {
+        "code": "c07",
+        "name": "Documentales",
+        "name_slug": "documentales",
+        "data": []
+    }, {
+        "code": "c08",
+        "name": "Dramas",
+        "name_slug": "dramas",
+        "data": []
+    }, {
+        "code": "c09",
+        "name": "Fantasias",
+        "name_slug": "fantasias",
+        "data": []
+    }, {
+        "code": "c10",
+        "name": "Historia",
+        "name_slug": "historia",
+        "data": []
+    }
+]
