@@ -62,9 +62,11 @@ a {
 .header__container-position_relative {
     position: relative;
 }
-.header__container-position_relative > .btn {
-    position: absolute;
-    right: 0;
+.menu-btn {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+
+    top: 0;
     display: none;
 }
 /* ----------------------------------------------- */
@@ -142,6 +144,8 @@ a {
 .btn-white {
     background-color: #fafafa;
     color: #333333;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.1);
 }
 
 .text-center {
@@ -193,7 +197,7 @@ a {
         min-width: 200px;
         padding: 10px;
     }
-    .header__container-position_relative > .btn {
+    .menu-btn {
         display: none;
     }
 
@@ -209,7 +213,7 @@ a {
     .section > nav {
         display: none;
     }
-    .header__container-position_relative > .btn {
+    .menu-btn {
         display: block;
     }
     .grid {

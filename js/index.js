@@ -41,30 +41,56 @@ function products(...args) {
 }
 function link(event) {
     event.preventDefault();
-    console.warn("Hacer función con localStorage");
+    let obj = null;
+    try {
+        let href = this.href.split("#");
+        let codes = href[1].split("-");
+        console.warn("Función que usa localStorage");
+        obj = window.json.find(function(c) {
+            if (c.code === codes[0])
+                return c;
+        }).data.find(function(p) {
+            if (p.code === codes[1])
+                return p;
+        });
+    } catch (error) {
+        console.error(error);
+    }
+    localStorage.setItem("obj", JSON.stringify(obj));
+    window.location.href = "pelicula.html";
+}
+function linkCategory(event) {
+    event.preventDefault();
 }
 document.addEventListener("DOMContentLoaded", function(event) {
     file('_txt/categorias.json', data => {
+        window.json = data;
         let ul = document.createElement("ul");
         data.forEach(elem => {
             let article = document.createElement("article");
             let li = document.createElement("li");
             let a = document.createElement("a");
-            article.id = elem.name_slug;
-            article.classList.add("article");
-            article.innerHTML = `<h4 class="article-name">${elem.name} (${elem.data.length})</h4>`
-            article.innerHTML += products(elem.data, elem.code);
-            a.href = `#${elem.name_slug}`;
+            a.href = !window.location.pathname.includes(".html") ? `./#${elem.name_slug}` : `./categoria.html#${elem.code}`;
             a.textContent = elem.name;
+            if (window.location.pathname.includes(".html"))
+                a.classList.add("category");
             li.dataset.code = elem.code;
             li.appendChild(a);
             ul.appendChild(li);
-            document.querySelector("#data").appendChild(article);
+
+            if (!window.location.pathname.includes(".html")) {
+                article.id = elem.name_slug;
+                article.classList.add("article");
+                article.innerHTML = `<h4 class="article-name">${elem.name} (${elem.data.length})</h4>`
+                article.innerHTML += products(elem.data, elem.code);
+                document.querySelector("#data").appendChild(article);
+            }
         });
         Array.prototype.forEach.call(document.querySelectorAll(".categories"), e => {
             e.appendChild(ul.cloneNode(true));
         });
-        Array.prototype.forEach.call(document.querySelectorAll(".grid-element"), a => a.addEventListener("click", link))
+        Array.prototype.forEach.call(document.querySelectorAll(".grid-element"), a => a.addEventListener("click", link));
+        Array.prototype.forEach.call(document.querySelectorAll(".category"), a => a.addEventListener("click", linkCategory));
     });
 
     document.querySelector(".nav-responsive__close").addEventListener("click", visibilityNav);
