@@ -24,11 +24,11 @@ function products(...args) {
     args[0].forEach(elem => {
         let a = document.createElement("a");
         let html = "";
-        let img = elem.img ? elem.img : "https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg";
+        let img = elem.img ? elem.img : "";
         a.classList.add("grid-element");
         a.href = `pelicula.html#${args[1]}-${elem.code}`;
         html += `<picture>`;
-            html += `<img src="${img}" alt="${elem.title}">`;
+            html += `<img src="${img}" onError="this.src='https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg'" alt="${elem.title}">`;
         html += `</picture>`;
         html += `<h5 class="text-center">${elem.title}</h5>`;
         html += `<p><strong>Año:</strong> ${elem.year}</p>`;
@@ -42,14 +42,16 @@ function products(...args) {
 function link(event) {
     event.preventDefault();
     let obj = null;
+    let category = null;
     try {
         let href = this.href.split("#");
         let codes = href[1].split("-");
         console.warn("Función que usa localStorage");
-        obj = window.json.find(function(c) {
+        category = window.json.find(function(c) {
             if (c.code === codes[0])
                 return c;
-        }).data.find(function(p) {
+        });
+        obj = category.data.find(function(p) {
             if (p.code === codes[1])
                 return p;
         });
@@ -57,11 +59,27 @@ function link(event) {
         console.error(error);
     }
     localStorage.setItem("obj", JSON.stringify(obj));
+    localStorage.setItem("category", JSON.stringify(category));
     window.location.href = "pelicula.html";
 }
 function linkCategory(event) {
     event.preventDefault();
+    let category = null;
+    try {
+        let href = this.href.split("#");
+        let codes = href[1];
+        console.warn("Función que usa localStorage");
+        category = window.json.find(function(c) {
+            if (c.code === codes)
+                return c;
+        });
+    } catch (error) {
+        console.error(error);
+    }
+    localStorage.setItem("categoryObj", JSON.stringify(category));
+    window.location.href = "categoria.html";
 }
+let finish = () => {}
 document.addEventListener("DOMContentLoaded", function(event) {
     file('_txt/categorias.json', data => {
         window.json = data;
@@ -89,10 +107,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         Array.prototype.forEach.call(document.querySelectorAll(".categories"), e => {
             e.appendChild(ul.cloneNode(true));
         });
+        finish();
         Array.prototype.forEach.call(document.querySelectorAll(".grid-element"), a => a.addEventListener("click", link));
         Array.prototype.forEach.call(document.querySelectorAll(".category"), a => a.addEventListener("click", linkCategory));
     });
-
     document.querySelector(".nav-responsive__close").addEventListener("click", visibilityNav);
     document.querySelector("#showMenu").addEventListener("click", visibilityNav);
 });
