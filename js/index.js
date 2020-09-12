@@ -25,15 +25,16 @@ function products(...args) {
         let a = document.createElement("a");
         let html = "";
         let img = elem.img ? elem.img : "";
+        console.log(img)
         a.classList.add("grid-element");
         a.href = `pelicula.html#${args[1]}-${elem.code}`;
         html += `<picture>`;
-            html += `<img src="${img}" onError="this.src='https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg'" alt="${elem.title}">`;
+            html += `<img src="${img}"  class="w-100" onError="this.src='https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg'" alt="${elem.title}">`;
         html += `</picture>`;
-        html += `<h5 class="text-center">${elem.title}</h5>`;
-        html += `<p><strong>Año:</strong> ${elem.year}</p>`;
-        html += `<p><strong>Clasificación:</strong> ${elem.classification}</p>`;
-        html += `<p><strong>Duración:</strong> ${elem.duration}</p>`;
+        html += `<h5 class="text-center">${elem.title ? elem.title : "-"}</h5>`;
+        html += `<p><strong>Año:</strong> ${elem.year ? elem.year : "-"}</p>`;
+        html += `<p><strong>Clasificación:</strong> ${elem.classification ? elem.classification : "-"}</p>`;
+        html += `<p><strong>Duración:</strong> ${elem.duration ? elem.duration : "-"}</p>`;
         a.innerHTML = html;
         container.appendChild(a);
     });

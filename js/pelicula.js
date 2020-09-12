@@ -15,10 +15,10 @@ function init(...args) {
     html += `</picture>`;
     html += `<hr/>`;
     html += `<p><strong>Categoría:</strong> ${window.category.name}</p>`;
-    html += `<p><strong>Año:</strong> ${window.obj.year}</p>`;
-    html += `<p><strong>Clasificación:</strong> ${window.obj.classification}</p>`;
-    html += `<p><strong>Duración:</strong> ${window.obj.duration}</p>`;
-    html += `<p><strong>Resumen:</strong></p><div>${window.obj.resume}</div>`;
+    html += `<p><strong>Año:</strong> ${window.obj.year ? window.obj.year : ""}</p>`;
+    html += `<p><strong>Clasificación:</strong> ${window.obj.classification ? window.obj.classification : ""}</p>`;
+    html += `<p><strong>Duración:</strong> ${window.obj.duration ? window.obj.duration : ""}</p>`;
+    html += `<p><strong>Resumen:</strong></p><div>${window.obj.resume ? window.obj.resume : ""}</div>`;
 
     document.querySelector("#data").innerHTML = html;
 }

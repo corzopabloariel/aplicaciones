@@ -69,6 +69,10 @@ hr {
 .block {
     display: block;
 }
+.logo {
+    width: 200px;
+    max-width: 100%;
+}
 /* ----------------------------------------------- */
 .header {
     height: var(--h);
@@ -92,7 +96,7 @@ hr {
 /* ----------------------------------------------- */
 .nav-responsive {
     height: 100vh;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.95);
     position: fixed;
     width: 100%;
     left: 0;
