@@ -1,10 +1,31 @@
 finish = () => {
-    Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+    let href = window.location.href.split("#");
+    let codes = href[1].split("-");
+    try {
+        let obj = null;
+        let category = null;
+        category = window.json.find(function(c) {
+            if (c.code === codes[0])
+                return c;
+        });
+        obj = category.data.find(function(p) {
+            if (p.code === codes[1])
+                return p;
+        });
+        init(obj, category);
+        Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 function init(...args) {
-    window.obj = JSON.parse(args[0]);
-    window.category = JSON.parse(args[1]);
+    window.obj = args[0];
+    window.category = args[1];
+    if (typeof args[0] === "string")
+        window.obj = JSON.parse(args[0]);
+    if (typeof args[1] === "string")
+        window.category = JSON.parse(args[1]);
     let html = "";
 
     let img = window.obj.img ? window.obj.img : "";
@@ -26,6 +47,10 @@ function init(...args) {
 document.addEventListener("DOMContentLoaded", function(event) {
     if (localStorage.obj !== undefined)
         init(localStorage.obj, localStorage.category);
-    else
-        window.location.href = "./";
+    else {
+        if (!window.location.href.includes(".html#")) {
+            window.location.href = "./";
+            return null;
+        }
+    }
 });

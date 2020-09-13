@@ -25,7 +25,6 @@ function products(...args) {
         let a = document.createElement("a");
         let html = "";
         let img = elem.img ? elem.img : "";
-        console.log(img)
         a.classList.add("grid-element");
         a.href = `pelicula.html#${args[1]}-${elem.code}`;
         html += `<picture>`;
@@ -56,12 +55,12 @@ function link(event) {
             if (p.code === codes[1])
                 return p;
         });
+        localStorage.setItem("obj", JSON.stringify(obj));
+        localStorage.setItem("category", JSON.stringify(category));
+        window.location.href = "pelicula.html";
     } catch (error) {
         console.error(error);
     }
-    localStorage.setItem("obj", JSON.stringify(obj));
-    localStorage.setItem("category", JSON.stringify(category));
-    window.location.href = "pelicula.html";
 }
 function linkCategory(event) {
     event.preventDefault();
@@ -74,13 +73,16 @@ function linkCategory(event) {
             if (c.code === codes)
                 return c;
         });
+        localStorage.setItem("categoryObj", JSON.stringify(category));
+        window.location.href = "categoria.html";
     } catch (error) {
         console.error(error);
     }
-    localStorage.setItem("categoryObj", JSON.stringify(category));
-    window.location.href = "categoria.html";
 }
-let finish = () => {}
+let finish = () => {
+    if (localStorage.obj !== undefined)
+        window.localStorage.clear();
+}
 document.addEventListener("DOMContentLoaded", function(event) {
     file('_txt/categorias.json', data => {
         window.json = data;

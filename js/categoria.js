@@ -1,11 +1,26 @@
 finish = () => {
-    Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+    let href = window.location.href.split("#");
+    let category = null;
+    try {
+        let codes = href[1];
+        category = window.json.find(function(c) {
+            if (c.code === codes)
+                return c;
+        });
+        init(category);
+        Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 function init(...args) {
     let container = document.createElement("div");
     container.classList.add("grid");
-    window.category = JSON.parse(args[0]);
+
+    window.category = args[0];
+    if (typeof args[0] === "string")
+        window.category = JSON.parse(args[0]);
     if (window.category.data.length == 0) {
         document.querySelector("#data").innerHTML = `<h5 class="text-center">Sin datos en "${window.category.name}"</h5>`;
         return null;
@@ -31,6 +46,10 @@ function init(...args) {
 document.addEventListener("DOMContentLoaded", function(event) {
     if (localStorage.categoryObj !== undefined)
         init(localStorage.categoryObj);
-    else
-        window.location.href = "./";
+    else {
+        if (!window.location.href.includes(".html#")) {
+            window.location.href = "./";
+            return null;
+        }
+    }
 });
