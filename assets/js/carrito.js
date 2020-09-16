@@ -1,9 +1,9 @@
-function carritoLink(event) {
+function carritoLink(event, t) {
     event.preventDefault();
     let valor = 0;
-    $(this).toggleClass("grid-click");
+    $(t).toggleClass("grid-click");
     $(".grid-click").each(function() {
-        valor += parseFloat($(this).data("precio"));
+        valor += parseFloat($(t).data("precio"));
     });
     valor = valor.toFixed(2);
     valor = valor.replace(".", ",");

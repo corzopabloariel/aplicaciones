@@ -37,7 +37,7 @@ function products(...args) {
         a.dataset.precio = elem.price === undefined ? 50 : elem.price;
         a.href = window.flagCarrito === undefined ? `pelicula.html#${args[1]}-${elem.code}` : "#";
         if (window.flagCarrito !== undefined)
-            a.setAttribute("onclick", "carritoLink(event)");
+            a.setAttribute("onclick", "carritoLink(event, this)");
         html += `<picture>`;
             html += `<img src="${img}"  class="w-100" onError="this.src='https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg'" alt="${elem.title}">`;
         html += `</picture>`;
