@@ -1,3 +1,9 @@
+/**
+ * DEPRECADO - Se usa getJSON
+ * Saca la información del archivo json indicado
+ * @param {*} file 
+ * @param {*} callbackOK 
+ */
 const file = async (file, callbackOK) => {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -12,11 +18,17 @@ const file = async (file, callbackOK) => {
     */
 }
 
+/**
+ * Muestra la visibilidad de un elemento
+ * @param {*} el
+ */
 const isVisible = el => {
     let style = window.getComputedStyle(el);
     return (style.display !== 'none')
 };
-
+/**
+ * Abre o cierra el menu
+ */
 function visibilityNav() {
     let nav = document.querySelector(".nav-responsive");
     if (isVisible(nav))
@@ -24,6 +36,10 @@ function visibilityNav() {
     else
         nav.classList.remove("none");
 }
+/**
+ * Genera los elementos y retorna el conjunto de todo (convertido en HTML)
+ * @param  {...any} args 
+ */
 function products(...args) {
     if (args[0].length === 0)
         return "";
@@ -52,6 +68,10 @@ function products(...args) {
     });
     return container.outerHTML;
 }
+/**
+ * Inicializa y declara la variable de localStorage donde guarda la producto a mostrar en el html indicado
+ * @param {*} event
+ */
 function link(event) {
     event.preventDefault();
     let obj = null;
@@ -75,6 +95,10 @@ function link(event) {
         console.error(error);
     }
 }
+/**
+ * Inicializa y declara la variable de localStorage donde guarda la categoria a mostrar en el html indicado
+ * @param {*} event
+ */
 function linkCategory(event) {
     event.preventDefault();
     let category = null;
@@ -92,13 +116,27 @@ function linkCategory(event) {
         console.error(error);
     }
 }
+/**
+ * Función que se dispara cuando termina de crear y agregar al dom los elementos. Se modifica según el html
+ * lo requiera
+ */
 let finish = () => {
     if (localStorage.obj !== undefined)
         window.localStorage.clear();
 }
 document.addEventListener("DOMContentLoaded", function(event) {
+    window.json = [];
+    $.getJSON("assets/_json/cat.accion.json", function( data ) {
+        var aux = [{
+            "code": "c01",
+            "name": "Acción",
+            "name_slug": "accion",
+            "data": data
+        }];
+        window.json = window.json.concat(aux);
+    });
     file('assets/_json/categorias.json', data => {
-        window.json = data;
+        window.json = window.json.concat(data);
         let ul = document.createElement("ul");
         let a = document.createElement("a");
         let li = document.createElement("li");
@@ -109,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let li2 = li.cloneNode(true);
         li2.querySelector("a").href = "carrito.html";
         li2.querySelector("a").textContent = "Carrito";
-        data.forEach(elem => {
+        window.json.forEach(elem => {
             let section = document.createElement("section");
             let li = document.createElement("li");
             let a = document.createElement("a");

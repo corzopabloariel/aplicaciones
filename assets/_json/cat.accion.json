@@ -1,0 +1,93 @@
+[
+    {
+        "code": "01",
+        "title": "Twister",
+        "year": 1996,
+        "classification": "13+",
+        "resume": "Twister",
+        "duration": "1h 52min",
+        "img": "https://cdn.peoople.app/image/recommendation/1263075/1263075_20012020015350477345_opt_520.jpg",
+        "price": 55.99
+    }, {
+        "code": "02",
+        "title": "Tropa de Elite",
+        "year": 2007,
+        "classification": "16+",
+        "resume": "Tropa de Elite",
+        "duration": "1h 55min",
+        "img": "https://musicart.xboxlive.com/7/11cb1000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
+        "price": 65.99
+    }, {
+        "code": "03",
+        "title": "Los Recolectores",
+        "year": 2010,
+        "classification": "16+",
+        "resume": "Los Recolectores",
+        "duration": "1h 51min",
+        "img": "https://pics.filmaffinity.com/Repo_Men-118853632-large.jpg",
+        "price": 45.99
+    }, {
+        "code": "04",
+        "title": "Francotirador",
+        "year": 2014,
+        "classification": "16+",
+        "resume": "Francotirador",
+        "duration": "2h 12min",
+        "img": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/11/francotirador.jpg?itok=fBTnd25V",
+        "price": 75.99
+    }, {
+        "code": "05",
+        "title": "John Wick: Otro día para matar",
+        "year": 2014,
+        "classification": "16+",
+        "resume": "<p>John Wick es una película de acción estadounidense de 2014, dirigida por David Leitch y Chad Stahelski, escrita por Derek Kolstad y protagonizada por Keanu Reeves. Fue estrenada el 24 de octubre de 2014. Y tiene una duración de 101 min.</p><p>La historia se centra en John Wick (Reeves), buscando a los hombres que irrumpieron en su casa, robaron su antiguo coche (Ford Mustang de 1969) y mataron a su cachorro, que fue un último regalo para él de su esposa recientemente fallecida (Moynahan).3​ Stahelski y David Leitch dirigieron la película juntos, aunque solo se acreditó a Stahelski.</p>",
+        "duration": "1h 54min",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/51-v2kovwfL._AC_SY445_.jpg",
+        "price": 85.99
+    }, {
+        "code": "06",
+        "title": "John Wick 2: un nuevo día para matar",
+        "year": 2017,
+        "classification": "16+",
+        "resume": "<p>El legendario sicario John Wick abandona su retiro cuando, debido a un pacto de sangre que le vincula a un colega, se ve obligado a viajar a Roma para enfrentarse a los asesinos más peligrosos del mundo y aniquilar a una organización secreta.</p>",
+        "duration": "2h 2min",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSMYxyVLF1s5ydH89PJvXyMTNGbkOUwfU6Tp7EvS0vpYD7Hohkb",
+        "price": 85.99
+    }, {
+        "code": "07",
+        "title": "John Wick 3: Parabellum",
+        "year": 2017,
+        "classification": "16+",
+        "resume": "<p>John Wick regresa de nuevo pero con una recompensa sobre su cabeza que persigue unos mercenarios. Tras asesinar a uno de los miembros de su gremio, Wick es expulsado y se convierte en el foco de atención de todos los sicarios de la organización.</p>",
+        "duration": "2h 10min",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxrd_sl_MyUwiTzXG6gxkAHdqRZsPy2kFJ8ZnBhzJrpk_r5fQ8",
+        "price": 85.99
+    }, {
+        "code": "08",
+        "title": "Batman: el caballero de la noche",
+        "year": 2008,
+        "classification": "13+",
+        "resume": "<p>Batman tiene que mantener el equilibrio entre el heroísmo y el vigilantismo para pelear contra un vil criminal conocido como el Guasón, que pretende sumir Ciudad Gótica en la anarquía.</p>",
+        "duration": "2h 32min",
+        "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT23C6zLtbyBLSJGPeK7vnDvgz6q1HFxXjP2m6NDWVEq4pJSmZr",
+        "price": 85.99
+    }, {
+        "code": "09",
+        "title": "Hellboy",
+        "year": 2019,
+        "classification": "13+",
+        "resume": "<p>Nimue, conocida como 'La Reina de la Sangre', es antigua hechicera que vuelve a la vida decidida a vengarse de una traición del pasado. Dividido entre el mundo sobrenatural y humano, el legendario medio demonio Hellboy recibe la misión de contener esa amenaza y salvar al mundo.</p>",
+        "duration": "2h 1min",
+        "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRXI5ey2hrfxGD62FHf1fEQkeeUaf5XI6LYHIGAHeAma4nLCgP6",
+        "price": 179.90
+    }, {
+        "code": "10",
+        "title": "Logan",
+        "year": 2017,
+        "classification": "13+",
+        "resume": "<p>Han pasado los años y los mutantes están en declive. Logan, débil y cansado, vive alejado de todos hasta que acepta una última misión de Charles Xavier: la de proteger a una joven especial, de nombre Laura Kinney pero conocida como X-23, la última esperanza de la raza mutante..</p>",
+        "duration": "2h 12min",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSeHitRWl8O51AD6-6xMiiXZKY0j8aHiP3DPkOss6cZsJdwa9h6",
+        "price": 289.90
+    }
+]

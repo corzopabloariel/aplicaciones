@@ -1,57 +1,5 @@
 [
     {
-        "code": "c01",
-        "name": "Acción",
-        "name_slug": "accion",
-        "data": [
-            {
-                "code": "01",
-                "title": "Twister",
-                "year": 1996,
-                "classification": "13+",
-                "resume": "Twister",
-                "duration": "1h 52min",
-                "img": "https://cdn.peoople.app/image/recommendation/1263075/1263075_20012020015350477345_opt_520.jpg",
-                "price": 55.99
-            }, {
-                "code": "02",
-                "title": "Tropa de Elite",
-                "year": 2007,
-                "classification": "16+",
-                "resume": "Tropa de Elite",
-                "duration": "1h 55min",
-                "img": "https://musicart.xboxlive.com/7/11cb1000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
-                "price": 65.99
-            }, {
-                "code": "03",
-                "title": "Los Recolectores",
-                "year": 2010,
-                "classification": "16+",
-                "resume": "Los Recolectores",
-                "duration": "1h 51min",
-                "img": "https://pics.filmaffinity.com/Repo_Men-118853632-large.jpg",
-                "price": 45.99
-            }, {
-                "code": "04",
-                "title": "Francotirador",
-                "year": 2014,
-                "classification": "16+",
-                "resume": "Francotirador",
-                "duration": "2h 12min",
-                "img": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/11/francotirador.jpg?itok=fBTnd25V",
-                "price": 75.99
-            }, {
-                "code": "05",
-                "title": "John Wick: Otro día para matar",
-                "year": 2014,
-                "classification": "16+",
-                "resume": "<p>John Wick es una película de acción estadounidense de 2014, dirigida por David Leitch y Chad Stahelski, escrita por Derek Kolstad y protagonizada por Keanu Reeves. Fue estrenada el 24 de octubre de 2014. Y tiene una duración de 101 min.</p><p>La historia se centra en John Wick (Reeves), buscando a los hombres que irrumpieron en su casa, robaron su antiguo coche (Ford Mustang de 1969) y mataron a su cachorro, que fue un último regalo para él de su esposa recientemente fallecida (Moynahan).3​ Stahelski y David Leitch dirigieron la película juntos, aunque solo se acreditó a Stahelski.</p>",
-                "duration": "1h 54min",
-                "img": "https://images-na.ssl-images-amazon.com/images/I/51-v2kovwfL._AC_SY445_.jpg",
-                "price": 85.99
-            }
-        ]
-    }, {
         "code": "c02",
         "name": "Ciencia ficción",
         "name_slug": "ciencia-ficcion",
