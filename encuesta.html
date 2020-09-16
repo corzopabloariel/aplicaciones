@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="nav-responsive none">
+        <div class="container nav-responsive__list categories header__container-position_relative">
+            <button class="btn btn-white nav-responsive__close" type="button">Cerrar</button>
+            <a href="./"><img src="assets/img/logo.png" class="logo"/></a>
+            <h3>Categorías</h3>
+        </div>
+    </div>
+    <button class="btn btn-white menu-btn" id="showMenu" type="button">Menu</button>
+    <div class="header">
+        <header>
+            <div class="container">
+                <a href="./"><img src="assets/img/logo.png" class="logo"/></a>
+            </div>
+        </header>
+    </div>
+    <div class="section">
+        <div class="sideBar">
+            <nav>
+                <h3>Categorías</h3>
+            </nav>
+        </div>
+        <div class="main">
+            <div id="data">
+                <form action="" method="post" onsubmit="enviar(event);">
+                    <div class="form-componente">
+                        <label for="nombre">Nombre</label>
+                        <input pattern="[A-Za-z]{3,50}" required="true" type="text" aria-label="Nombre" placeholder="Nombre" name="nombre" id="nombre" class="form-input">
+                        <small>Entre 3 y 50 caracteres</small>
+                    </div>
+                    <div class="form-componente">
+                        <label for="apellido">Apellido</label>
+                        <input pattern="[A-Za-z]{3,50}" required="true" type="text" aria-label="Apellido" placeholder="Apellido" name="apellido" id="apellido" class="form-input">
+                        <small>Entre 3 y 50 caracteres</small>
+                    </div>
+                    <div class="form-componente">
+                        <label for="fecha_nac">Fecha de nacimiento</label>
+                        <input pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required="true" type="text" aria-label="Fecha de nacimiento" placeholder="Fecha de nacimiento: dd/mm/aaaa" name="fecha_nac" id="fecha_nac" class="form-input">
+                    </div>
+
+                    <div class="form-componente">
+                        <label for="sexo">Sexo</label>
+                        <select name="sexo" aria-label="Sexo" required="true" id="sexo" class="form-input">
+                            <option value="" hidden>- Sexo -</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
+                    <div class="form-componente">
+                        <label for="valoracion">Valoración</label>
+                        <select name="valoracion" aria-label="Valoración" required="true" id="valoracion" class="form-input">
+                            <option value="" hidden>- Valoración -</option>
+                            <option>Lamentable</option>
+                            <option>Mala</option>
+                            <option>Podría ser mejor</option>
+                            <option>Cumple con mis expectativas</option>
+                            <option>Me encantó</option>
+                        </select>
+                    </div>
+                    <div class="form-componente">
+                        <label for="email">Email</label>
+                        <input required="true" aria-label="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" placeholder="Email" name="email" id="email" class="form-input">
+                    </div>
+
+                    <div class="form-componente">
+                        <label for="comentario">Comentario</label>
+                        <textarea placeholder="Comentario" aria-label="Comentario" name="comentario" id="comentario" class="form-input"></textarea>
+                    </div>
+
+                    <div class="form-componente">
+                        <button class="btn" type="submit">Enviar</button>
+                        <button class="btn" onclick="cancelar();" type="button">Cancelar</button>
+                        <button class="btn" onclick="restablecer();" type="button">Restablecer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+            <div class="container">
+                Footer
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/encuesta.js"></script>
+</body>
+</html>

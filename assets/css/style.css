@@ -131,17 +131,33 @@ hr {
     top: 0;
     z-index: 11;
 }
+.encuesta {
+    margin-top: 30px;
+    text-transform: uppercase;
+}
 /* ----------------------------------------------- */
 .section {
     display: flex;
+    flex-direction: column;
 }
-.section > nav {
+.section > .sideBar {
     background-color: #f0f0f0;
-    width: var(--w);
-    padding: 10px 0;
+    padding: 10px;
 }
-.section > section {
-    width: 100%;
+.section > .sideBar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section > .sideBar .encuesta {
+    margin-top: 0;
+}
+.section > .sideBar ul li + li {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #ccc;
+}
+.section > .main {
     padding: 10px;
 }
 /* ----------------------------------------------- */
@@ -158,12 +174,42 @@ hr {
     background-color: #efefef;
     border-radius: .3em;
 }
+.grid-click {
+    background-color: brown;
+    color: #fff;
+}
+.grid-click img {
+    opacity: .80;
+}
+
+.carrito {
+    position: fixed;
+    z-index: 11;
+    right: 0;
+    top: 10px;
+    padding: 10px;
+    background-color: burlywood;
+    border-radius: .4em 0 0 .4em;
+}
+/* ----------------------------------------------- */
+.form-componente + .form-componente {
+    margin-top: 10px;
+}
+.form-input {
+    border: 1px solid #cacaca;
+    outline: none;
+    padding: .75rem .55rem;
+    display: block;
+    border-radius: .3em;
+    max-width: 100%;
+}
 /* ----------------------------------------------- */
 .btn {
     background-color: transparent;
     border: 1px solid transparent;
     padding: .755rem .425rem;
     cursor: pointer;
+    background-color: #ccc;
 }
 .btn-white {
     background-color: #fafafa;

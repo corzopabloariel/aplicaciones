@@ -1,16 +1,18 @@
 finish = () => {
-    let href = window.location.href.split("#");
-    let category = null;
-    try {
-        let codes = href[1];
-        category = window.json.find(function(c) {
-            if (c.code === codes)
-                return c;
-        });
-        init(category);
-        Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
-    } catch (error) {
-        console.error(error);
+    if (window.location.href.includes("#")) {
+        let href = window.location.href.split("#");
+        let category = null;
+        try {
+            let codes = href[1];
+            category = window.json.find(function(c) {
+                if (c.code === codes)
+                    return c;
+            });
+            init(category);
+            Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 

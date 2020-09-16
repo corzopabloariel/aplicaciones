@@ -1,21 +1,23 @@
 finish = () => {
-    let href = window.location.href.split("#");
-    let codes = href[1].split("-");
-    try {
-        let obj = null;
-        let category = null;
-        category = window.json.find(function(c) {
-            if (c.code === codes[0])
-                return c;
-        });
-        obj = category.data.find(function(p) {
-            if (p.code === codes[1])
-                return p;
-        });
-        init(obj, category);
-        Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
-    } catch (error) {
-        console.error(error);
+    if (window.location.href.includes("#")) {
+        let href = window.location.href.split("#");
+        let codes = href[1].split("-");
+        try {
+            let obj = null;
+            let category = null;
+            category = window.json.find(function(c) {
+                if (c.code === codes[0])
+                    return c;
+            });
+            obj = category.data.find(function(p) {
+                if (p.code === codes[1])
+                    return p;
+            });
+            init(obj, category);
+            Array.prototype.forEach.call(document.querySelectorAll(`[data-code="${window.category.code}"]`), c => c.classList.add("active"));
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 

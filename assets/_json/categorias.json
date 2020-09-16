@@ -11,7 +11,8 @@
                 "classification": "13+",
                 "resume": "Twister",
                 "duration": "1h 52min",
-                "img": "https://cdn.peoople.app/image/recommendation/1263075/1263075_20012020015350477345_opt_520.jpg"
+                "img": "https://cdn.peoople.app/image/recommendation/1263075/1263075_20012020015350477345_opt_520.jpg",
+                "price": 55.99
             }, {
                 "code": "02",
                 "title": "Tropa de Elite",
@@ -19,7 +20,8 @@
                 "classification": "16+",
                 "resume": "Tropa de Elite",
                 "duration": "1h 55min",
-                "img": "https://musicart.xboxlive.com/7/11cb1000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080"
+                "img": "https://musicart.xboxlive.com/7/11cb1000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
+                "price": 65.99
             }, {
                 "code": "03",
                 "title": "Los Recolectores",
@@ -27,7 +29,8 @@
                 "classification": "16+",
                 "resume": "Los Recolectores",
                 "duration": "1h 51min",
-                "img": "https://pics.filmaffinity.com/Repo_Men-118853632-large.jpg"
+                "img": "https://pics.filmaffinity.com/Repo_Men-118853632-large.jpg",
+                "price": 45.99
             }, {
                 "code": "04",
                 "title": "Francotirador",
@@ -35,7 +38,8 @@
                 "classification": "16+",
                 "resume": "Francotirador",
                 "duration": "2h 12min",
-                "img": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/11/francotirador.jpg?itok=fBTnd25V"
+                "img": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/11/francotirador.jpg?itok=fBTnd25V",
+                "price": 75.99
             }, {
                 "code": "05",
                 "title": "John Wick: Otro día para matar",
@@ -43,7 +47,8 @@
                 "classification": "16+",
                 "resume": "<p>John Wick es una película de acción estadounidense de 2014, dirigida por David Leitch y Chad Stahelski, escrita por Derek Kolstad y protagonizada por Keanu Reeves. Fue estrenada el 24 de octubre de 2014. Y tiene una duración de 101 min.</p><p>La historia se centra en John Wick (Reeves), buscando a los hombres que irrumpieron en su casa, robaron su antiguo coche (Ford Mustang de 1969) y mataron a su cachorro, que fue un último regalo para él de su esposa recientemente fallecida (Moynahan).3​ Stahelski y David Leitch dirigieron la película juntos, aunque solo se acreditó a Stahelski.</p>",
                 "duration": "1h 54min",
-                "img": "https://images-na.ssl-images-amazon.com/images/I/51-v2kovwfL._AC_SY445_.jpg"
+                "img": "https://images-na.ssl-images-amazon.com/images/I/51-v2kovwfL._AC_SY445_.jpg",
+                "price": 85.99
             }
         ]
     }, {
@@ -58,7 +63,8 @@
                 "classification": "16+",
                 "resume": "<p>Interstellar (Interestelar, en Hispanoamérica) es una película épica de ciencia ficción estadounidense de 2014, dirigida por Christopher Nolan y protagonizada por Matthew McConaughey, Anne Hathaway, Jessica Chastain, Michael Caine y Matt Damon. Presenta a un equipo de astronautas que viajan a través de un agujero de gusano en busca de un nuevo hogar para la humanidad. Los hermanos Christopher y Jonathan Nolan escribieron el guion, que tuvo su origen en un borrador que Jonathan desarrolló en 2007. Christopher Nolan produjo la película junto a su esposa Emma Thomas mediante su compañía productora Syncopy, y con Lynda Obst a través de Lynda Obst Productions. El físico teórico Kip Thorne, cuyo trabajo inspiró la película, fue productor ejecutivo y participó como consultor científico. Warner Bros., Paramount Pictures y Legendary Pictures cofinanciaron la película.</p>",
                 "duration": "2h 49min",
-                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMHMl9U1z1txXWCBgKbSlwH0tV3wVIsxyd6CQLhR0CkgC8Nagf"
+                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMHMl9U1z1txXWCBgKbSlwH0tV3wVIsxyd6CQLhR0CkgC8Nagf",
+                "price": 55.99
             }, {
                 "code": "02",
                 "title": "Ready Player One: comienza el juego",
@@ -66,7 +72,8 @@
                 "classification": "16+",
                 "resume": "<p>Año 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrío mundo real para sumergirse en un mundo utópico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra él.</p>",
                 "duration": "2h 19min",
-                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQkVlksOAx3TRl4X1QpK7pMDIEwHdAIMr1AW0xWu5a-t5OASa68"
+                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQkVlksOAx3TRl4X1QpK7pMDIEwHdAIMr1AW0xWu5a-t5OASa68",
+                "price": 45.99
             }, {
                 "code": "03",
                 "title": "Proyecto Géminis",
@@ -74,7 +81,8 @@
                 "classification": "16+",
                 "resume": "<p>Henry Bogan, un asesino a sueldo, pretende retirarse porque se siente viejo. Sin embargo, hay alguien que no está dispuesto a permitírselo porque tiene la misión de matarlo: un clon suyo más joven, más rápido y más fuerte.</p>",
                 "duration": "1h 57min",
-                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ5LgkCRNm45cY4I9O2o--x7CWggsM7Rt28vREOqJsHtEDq-1se"
+                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ5LgkCRNm45cY4I9O2o--x7CWggsM7Rt28vREOqJsHtEDq-1se",
+                "price": 55.99
             }, {
                 "code": "04",
                 "title": "Total Recall",
@@ -82,7 +90,8 @@
                 "classification": "16+",
                 "resume": "<p>El empleado de una fábrica decide tomarse unas pequeñas vacaciones mentales y contrata a una empresa de viajes virtuales para que le implante recuerdos de un inexistente viaje turístico a Marte.</p>",
                 "duration": "1h 58min",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWcu9r4Lli1S4xq5VquWoWOkWrC4LxF63iWqiy_khvHDUMDKyz"
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWcu9r4Lli1S4xq5VquWoWOkWrC4LxF63iWqiy_khvHDUMDKyz",
+                "price": 55.99
             }
         ]
     }, {
@@ -102,7 +111,8 @@
                 "classification": "16+",
                 "resume": "<p>Dave y Mitch eran un par de amigos inseparables que se alejaron con el tiempo. Dave es un abogado que tiene mucho trabajo y un hombre de familia, mientras que Mitch evita las responsabilidades normales de los adultos. Entre ellos se envidian y después de una noche de copas, los hombres despiertan y descubren que han intercambiado sus cuerpos. Dave y Mitch se enteran muy pronto de que las cosas no son tan fáciles como parecían y buscan regresar a la normalidad.</p>",
                 "duration": "1h 58min",
-                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwnGPkCR-qY50s4Cc0Ds_bl_g7UG-FQ52uJfdWG5gmPr5wd_A4"
+                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwnGPkCR-qY50s4Cc0Ds_bl_g7UG-FQ52uJfdWG5gmPr5wd_A4",
+                "price": 55.99
             }
         ]
     }, {
@@ -117,7 +127,8 @@
                 "classification": "16+",
                 "resume": "<p>Un grupo de vecinos se organiza para llevar a cabo un provecto que ayude a paliar la crisis. Sin embargo en medio de este corralito en el que son víctimas de un abogado y un banquero, se organizarán para planear cómo recuperar sus ahorros.</p>",
                 "duration": "2h",
-                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJeijB9uanl0AOPV2BU6e2K8RX5_dyGLSn2tp9IT2CFZ0Pcaf"
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJeijB9uanl0AOPV2BU6e2K8RX5_dyGLSn2tp9IT2CFZ0Pcaf",
+                "price": 55.99
             }, {
                 "code": "02",
                 "title": "El robo del siglo",
@@ -125,7 +136,8 @@
                 "classification": "16+",
                 "resume": "<p>Viernes 13 de enero de 2006. Los policías aguardan la voz de su jefe. Miguel Sileo, el negociador, espera hablar con Vitette, uno de los líderes de la banda de ladrones que entró a la sucursal del Banco Río de Acassuso.</p>",
                 "duration": "1h 54min",
-                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS8Oa3kFzoDT0qPtJVrxVMPnesyq_j1wG-POwgsaFGK22sHcfX-"
+                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS8Oa3kFzoDT0qPtJVrxVMPnesyq_j1wG-POwgsaFGK22sHcfX-",
+                "price": 55.99
             }, {
                 "code": "03",
                 "title": "El secreto de sus ojos",
@@ -133,7 +145,8 @@
                 "classification": "16+",
                 "resume": "<p>Benjamín Espósito es un oficial de un Juzgado de Instrucción de Buenos Aires que acaba de jubilarse. Su sueño es escribir una novela y, para ello, intentará dar solución a un caso abierto desde hace varias décadas, del cual fue testigo y protagonista. Reviviendo el caso, vuelve también a su memoria el recuerdo de una mujer, a quien ha amado en silencio durante todos esos años.</p>",
                 "duration": "2h 9min",
-                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiuZCK6QazCgK87TNCP4pt-sWS4pV90Ga3TqObxXaYLqxAvuQI"
+                "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiuZCK6QazCgK87TNCP4pt-sWS4pV90Ga3TqObxXaYLqxAvuQI",
+                "price": 55.99
             }, {
                 "code": "04",
                 "title": "Relatos salvajes",
@@ -141,7 +154,8 @@
                 "classification": "16+",
                 "resume": "<p>Seis relatos que alternan la intriga, la comedia y la violencia. Sus personajes se verán empujados hacia el abismo y hacia el innegable placer de perder el control al cruzar la delgada línea que separa la civilización de la barbarie.</p>",
                 "duration": "2h 9min",
-                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfQLe-7nnWM87HAykKl-lySTO4pVKyMDBVH2HXMjuA82EmlwnT"
+                "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfQLe-7nnWM87HAykKl-lySTO4pVKyMDBVH2HXMjuA82EmlwnT",
+                "price": 55.99
             }
         ]
     }, {
@@ -156,16 +170,6 @@
         "data": []
     }, {
         "code": "c08",
-        "name": "Dramas",
-        "name_slug": "dramas",
-        "data": []
-    }, {
-        "code": "c09",
-        "name": "Fantasias",
-        "name_slug": "fantasias",
-        "data": []
-    }, {
-        "code": "c10",
         "name": "Historia",
         "name_slug": "historia",
         "data": []

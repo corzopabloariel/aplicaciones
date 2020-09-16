@@ -1,7 +1,15 @@
 const file = async (file, callbackOK) => {
-    const response = await fetch(file)
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200")
+            callbackOK.call(null, JSON.parse(rawFile.responseText));
+    }
+    rawFile.send(null);
+    /*const response = await fetch(file)
     const text = await response.text()
-    callbackOK.call(null, JSON.parse(text));
+    */
 }
 
 const isVisible = el => {
@@ -26,7 +34,8 @@ function products(...args) {
         let html = "";
         let img = elem.img ? elem.img : "";
         a.classList.add("grid-element");
-        a.href = `pelicula.html#${args[1]}-${elem.code}`;
+        a.dataset.precio = elem.price === undefined ? 50 : elem.price;
+        a.href = window.flagCarrito === undefined ? `pelicula.html#${args[1]}-${elem.code}` : "#";
         html += `<picture>`;
             html += `<img src="${img}"  class="w-100" onError="this.src='https://www.unaj.edu.ar/wp-content/uploads/2016/06/logo-unaj-2016-01.jpg'" alt="${elem.title}">`;
         html += `</picture>`;
@@ -34,6 +43,8 @@ function products(...args) {
         html += `<p><strong>Año:</strong> ${elem.year ? elem.year : "-"}</p>`;
         html += `<p><strong>Clasificación:</strong> ${elem.classification ? elem.classification : "-"}</p>`;
         html += `<p><strong>Duración:</strong> ${elem.duration ? elem.duration : "-"}</p>`;
+        if (window.flagCarrito !== undefined && elem.price !== undefined)
+            html += `<p><strong>Precio:</strong> $${elem.price.toFixed(2).replace(".", ",")}</p>`;
         a.innerHTML = html;
         container.appendChild(a);
     });
@@ -84,11 +95,20 @@ let finish = () => {
         window.localStorage.clear();
 }
 document.addEventListener("DOMContentLoaded", function(event) {
-    file('_txt/categorias.json', data => {
+    file('assets/_json/categorias.json', data => {
         window.json = data;
         let ul = document.createElement("ul");
+        let a = document.createElement("a");
+        let li = document.createElement("li");
+        a.href = "encuesta.html";
+        a.textContent = "Encuesta";
+        li.appendChild(a);
+        li.classList.add("encuesta");
+        let li2 = li.cloneNode(true);
+        li2.querySelector("a").href = "carrito.html";
+        li2.querySelector("a").textContent = "Carrito";
         data.forEach(elem => {
-            let article = document.createElement("article");
+            let section = document.createElement("section");
             let li = document.createElement("li");
             let a = document.createElement("a");
             a.href = !window.location.pathname.includes(".html") ? `./#${elem.name_slug}` : `./categoria.html#${elem.code}`;
@@ -99,19 +119,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
             li.appendChild(a);
             ul.appendChild(li);
 
-            if (!window.location.pathname.includes(".html")) {
-                article.id = elem.name_slug;
-                article.classList.add("article");
-                article.innerHTML = `<h4 class="article-name">${elem.name} (${elem.data.length})</h4>`
-                article.innerHTML += products(elem.data, elem.code);
-                document.querySelector("#data").appendChild(article);
+            if (!window.location.pathname.includes(".html") || window.flagCarrito !== undefined) {
+                section.id = elem.name_slug;
+                section.classList.add("article");
+                section.innerHTML = `<h4 class="article-name">${elem.name} (${elem.data.length})</h4>`
+                section.innerHTML += products(elem.data, elem.code);
+                document.querySelector("#data").appendChild(section);
             }
         });
-        Array.prototype.forEach.call(document.querySelectorAll(".categories"), e => {
-            e.appendChild(ul.cloneNode(true));
-        });
+        ul.appendChild(li);
+        ul.appendChild(li2);
+        document.querySelector(".categories").appendChild(ul.cloneNode(true));
+        document.querySelector("nav").appendChild(ul.cloneNode(true));
         finish();
-        Array.prototype.forEach.call(document.querySelectorAll(".grid-element"), a => a.addEventListener("click", link));
+        if (window.flagCarrito === undefined)
+            Array.prototype.forEach.call(document.querySelectorAll(".grid-element"), a => a.addEventListener("click", link));
         Array.prototype.forEach.call(document.querySelectorAll(".category"), a => a.addEventListener("click", linkCategory));
     });
     document.querySelector(".nav-responsive__close").addEventListener("click", visibilityNav);
