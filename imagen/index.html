@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img src="prueba.jpg" alt="" srcset=""></td>
+            <td><img src="prueba.jpg" alt="" class="watermark" srcset=""></td>
+        </tr>
+    </table>
+
+    <script src="watermark.js"></script>
+    <script>
+        var load = false;
+		window.onload = function(){
+			if(!load){
+				wmark.init({
+                    "position": "top-left", // default "bottom-right"
+                    "opacity": 70, // default 50
+                    "className": "watermark", // default "watermark"
+                    "path": "qr.png"
+				});
+				load = true;
+			}
+		}
+
+    </script>
+</body>
+</html>
