@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iTunes Store API</title>
+    <script src="assets/js/mostrarResultados.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- /CSS -->
@@ -39,11 +40,11 @@
                 </div>
                 <img src="https://apple-resources.s3.amazonaws.com/medusa/production/images/5f62506b3b5a110001b4556c/en-us-large@1x.png" alt="Affiliate Lockup 2020" class="img-aux">
                 <div class="search">
-                    <form action="" method="post">
-                        <div class="search__grid">
+                    <form action="javascript:resultados();" method="post">
+                        <div class="search__grid"></div>
                             <div>
                                 <label for="termino">Término</label>
-                                <input type="search" name="" class="form--element" id="" placeholder="Término">
+                                <input type="search" name="" class="form--element" id="busq" placeholder="Término">
                             </div>
                             <div>
                                 <label for="media">Elemento</label>
@@ -83,9 +84,9 @@
                         </code>
                     </form>
                 </div>
-                <!--<div class="productos">
+                <div class="productos">
                     <div class="grid">
-                        <div class="music">
+                <!--        <div class="music">
                             <picture></picture>
                             <div class="text">
                                 <a href="">Título 1</a>
@@ -101,9 +102,9 @@
                             <div class="text">
                                 <a href="">Título 1</a>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </main>
