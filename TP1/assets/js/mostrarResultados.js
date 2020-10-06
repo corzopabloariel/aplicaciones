@@ -21,16 +21,16 @@ console.log(busq);
               
             $(".grid").append(`
             
-            <div class="music">
+            <div id='${obj.trackId}' class="music">
             <picture>
             <img src='${obj.artworkUrl100}'>
             </picture>
             <div class="text">
-                <a href="">Título 1</a>
+                <a href="">${obj.trackName}</a>
                 <ul class="details">
-                    <li>Autor</li>
-                    <li>Fecha</li>
-                    <li>Duración</li>
+                    <li>${obj.artistName}</li>
+                    <li>${obj.releaseDate}</li>
+                    <li>${obj.country}</li>
                 </ul>
             </div>
         </div>
