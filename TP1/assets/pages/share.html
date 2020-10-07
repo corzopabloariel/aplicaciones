@@ -43,22 +43,30 @@
             <h2 class="title">Services Performance Partners</h2>
           </div>
         </div>
-        <img src="https://apple-resources.s3.amazonaws.com/medusa/production/images/5f62506b3b5a110001b4556c/en-us-large@1x.png" alt="Affiliate Lockup 2020" class="img-aux">
-        
+        <img
+          src="https://apple-resources.s3.amazonaws.com/medusa/production/images/5f62506b3b5a110001b4556c/en-us-large@1x.png"
+          alt="Affiliate Lockup 2020" class="img-aux">
+
         <div id="share">
-          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-            <div>
-              <label>Correo emisor</label>
-              <input type="text" name="name">
-            </div>
-            <div>
-              <label>Correo destino</label>
-              <input type="text" name="name">
-            </div>
-            <div>
-              <label>Mensaje</label>
-              <textarea name="name" rows="6" cols="20"></textarea>
-            </div>
+          <form action="" id="shareForm" method="post" enctype="text/plain">
+            <section id="maildata">
+              <div>
+                <label>Correo destino</label>
+                <input type="text" name="receipt">
+              </div>
+              <div>
+                <label>Asunto</label>
+                <input type="text" name="subject">
+              </div>
+              <div>
+                <label>Mensaje</label>
+                <textarea name="message" rows="6" cols="20"></textarea>
+              </div>
+            </section>
+            <section id="product">
+
+            </section>
+            <button type="submit">Enviar</button>
           </form>
         </div>
       </div>
@@ -88,6 +96,7 @@
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
+  <script src="/assets/js/share.js"></script>
   <!-- /JS -->
 </body>
 
