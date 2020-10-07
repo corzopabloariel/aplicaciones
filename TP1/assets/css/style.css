@@ -53,6 +53,15 @@ code {
     border-radius: 4px;
     display: block;
 }
+
+ol li {
+    margin: 0 20px;
+}
+ol li div {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* ---- CONTENEDOR ---- */
 .container {
     width: 1920px;
