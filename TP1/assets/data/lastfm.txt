@@ -1,0 +1,6 @@
+ Here are the details of your new API account.
+ 
+Application name 	  AppMov
+API key 	          bd8b1339df5c52e5e9b058bd20ef9b58
+Shared secret 	    de1fdbac62ccbe87b499ff11d1d22621
+Registered to 	    hukummikrms

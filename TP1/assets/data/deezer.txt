@@ -1,0 +1,8 @@
+DOCUMENTACION
+https://developers.deezer.com/api
+
+ENDPOINT
+https://api.deezer.com
+
+EJEMPLO
+https://api.deezer.com/search/artist/?q=eminem&index=1&limit=3
