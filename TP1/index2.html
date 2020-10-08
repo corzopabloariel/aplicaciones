@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTunes Store API</title>
+    <script src="assets/js/mostrarResultados.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <link rel="stylesheet" href="assets/css/rickmorty.css">
+    <!-- /CSS -->
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="container">
+                <div class="header__container">
+                    <div class="header__logo">
+                        <h1>Working with Rick y Morty</h1>
+                    </div>
+                    <div class="header__nav">
+                        <nav>
+                            <ul class="nav">
+                                <li class="nav__link active"><a>Inicio</a></li>
+                                <li class="nav__link"><a>Ubicación</a></li>
+                                <li class="nav__link"><a>Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <div class="container">
+                <div class="main__slider2">
+                    <div class="slider__text">
+                        <h2 class="title">Services Performance Partners</h2>
+                    </div>
+                </div>
+                <img src="assets/img/not-itunes.png" alt="Affiliate Lockup 2020" class="img-aux">
+                <div class="search2">
+                    <form action="javascript:resultados();" method="post">
+                        <div class="search__grid"></div>
+                            <div>
+                                <label for="termino">Personaje</label>
+                                <input type="search" name="" class="form--element" id="busq" placeholder="Término">
+                            </div>
+                            <div>
+                                <label for="media">Episodio</label>
+                                <select name="media" id="media" class="form--element">
+                                    <!-----por temporada------>
+                                    <option value="" hidden>- Episodio -</option>
+                                    <option value="movie">1</option>
+                                    <option value="podcast">2</option>
+                                    <option value="music">3</option>
+                                    <option value="musicVideo">4</option>
+                                    <option value="audiobook">5</option>
+                                    <option value="shortFilm">6</option>
+                                    <option value="tvShow">7</option>
+                                    <option value="ebook">8</option>
+                                    <option value="all">9</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="pais">Locacion</label>
+                                <select name="country" id="pais" class="form--element">
+                                    <option value="" hidden>- País -</option>
+                                    <option value="ar">Argentina</option>
+                                    <option value="br">Brasil</option>
+                                    <option value="cl">Chile</option>
+                                    <option value="es">España</option>
+                                    <option value="mx">México</option>
+                                    <option value="pe">Perú</option>
+                                    <option value="py">Paraguay</option>
+                                    <option value="uy">Uruguay</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search__grid">
+                            <button class="btn btn-primary">Buscar</button>
+                        </div>
+                        <code>
+                            https://itunes.apple.com/search?term=gustavo+cerati&country=ar&media=music&limit=10
+                        </code>
+                    </form>
+                </div>
+                <div class="productos">
+                    <div class="grid">
+                <!--        <div class="music">
+                            <picture></picture>
+                            <div class="text">
+                                <a href="">Título 1</a>
+                                <ul class="details">
+                                    <li>Autor</li>
+                                    <li>Fecha</li>
+                                    <li>Duración</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="music">
+                            <picture></picture>
+                            <div class="text">
+                                <a href="">Título 1</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                Developers may use certain promotional content as may be provided by Apple, including previews of songs and music videos, and album art, for the purposes of promoting the subject of the Promo Content; provided such Promo Content: (i) is placed only on pages that promote the content on which the Promo Content is based; (ii) is proximate to a “Download on iTunes” or “Download on App Store” badge (as approved by Apple) that acts as a link directly to pages within iTunes where consumers can purchase the promoted content; (iii) includes attribution indicating the Promo Content was “provided courtesy of iTunes” if such Promo Content includes song or music video previews; (iv) is streamed only, and not downloaded, saved, cached, or synchronized with video, if such Promo Content includes song or music video previews; (v) is not used for independent entertainment value apart from its promotional purpose; and (vi) is not used to promote any other goods or services. Developer acknowledges that Apple provides the Promo Content “as is,” and disclaims any and all representations or warranties, including, but not limited to, non-infringement. Developer shall forward any claims received in connection with the Promo Content to Apple immediately upon receipt, and will remove any Promo Content immediately upon request from Apple.
+            </div>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- /JS -->
+</body>
+</html>
