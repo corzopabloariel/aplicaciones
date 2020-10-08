@@ -44,7 +44,7 @@ h1 {
     line-height: calc(var(--fz) + 21px);
 }
 /* ---- INPUT ---- */
-.form--element {
+.form__element {
     border: 1px solid #cecece;
     border-radius: .3em;
     padding: .35rem .175rem;
@@ -52,9 +52,13 @@ h1 {
     width: 100%;
     transition: .4s;
 }
-.form--element:focus {
+.form__element:focus {
     outline: none;
     border-color: #4d4d4d;
+}
+.form__element--search {
+    padding: .9em .75em;
+    border-radius: .5em;
 }
 .btn {
     cursor: pointer;
@@ -199,3 +203,32 @@ header {
     }
 }
 /* ---- /SEARCH ---- */
+
+.section {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 20px;
+}
+.section > .main {
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+.nav .nav {
+    padding-left: 1em;
+    margin-top: 0;
+}
+.nav__element {
+    font-size: 15px;
+}
+.nav__element--title {
+    font-size: 20px;
+    font-weight: 500;
+}
