@@ -5,8 +5,8 @@ $(document).ready(function () {
   });
 });
 
-function saveSearchHistory(search) {
-  if (search.trim() !== '') {
+function saveSearchHistory(text, search) {
+  if (text.trim() !== '') {
     if (typeof (Storage) !== 'undefined') {
       var searchHistory = [];
       if (localStorage.searchHistory !== undefined) {
@@ -14,7 +14,8 @@ function saveSearchHistory(search) {
       }
 
       var searchItem = {
-        text: search,
+        search: search,
+        text: text,
         date: new Date()
       }
 
