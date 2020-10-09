@@ -10,23 +10,17 @@ function loadSearchHistory() {
       var searchHistory = JSON.parse(localStorage.searchHistory);
       if (searchHistory.length > 0) {
         historyNode.html('');
-        orderedList = $('<ol></ol>');
         $.each(searchHistory, function (index, search) {
-          var element = `<li>
-                          <div>
-                            <span>
-                              <a href="">
-                                ${search.text}
-                              </a>
-                            </span>
-                            <span>
-                              ${new Date(search.date).toLocaleString()}
-                            </span>
-                          </div>
-                         </li>`;
-          orderedList.append(element);
+          var element = `<div>
+                            <a href="${search.search}">
+                              ${search.text}
+                              <span>
+                                ${new Date(search.date).toLocaleString()}
+                              </span>
+                            </a>
+                         </div>`;
+          historyNode.append(element);
         });
-        historyNode.append(orderedList);
       }
     }
   }
