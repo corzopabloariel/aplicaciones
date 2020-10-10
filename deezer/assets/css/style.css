@@ -128,6 +128,8 @@ header {
 }
 .header__logo img {
     width: 100%;
+    height: 32px;
+    max-width: 125px;
 }
 @media (max-width: 768px) {
     .header__container {
@@ -144,6 +146,10 @@ header {
     }
     .header__logo {
         padding: 0 10px;
+    }
+    .header__logo img {
+        display: block;
+        margin: auto;
     }
 }
 /* ---- /HEADER ---- */
