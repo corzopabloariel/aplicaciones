@@ -179,6 +179,7 @@ header {
     cursor: pointer;
 }
 .nav--json::after {
+    transition: 1s;
     content: "\25BC";
     color: #ccc;
     position: absolute;
@@ -189,6 +190,7 @@ header {
     cursor: pointer;
 }
 .nav--collapse::after {
+    transition: 1s;
     transform: rotate(90deg);
 }
 .nav--collapse .nav {
@@ -242,9 +244,27 @@ header {
     .container {
         width: 540px;
     }
-
     .header__container {
         grid-template-columns: 1fr 1fr;
+    }
+    .section {
+        grid-template-columns: 1fr;
+    }
+
+    .nav--json::after {
+        transform: rotate(90deg);
+        transition: 1s;
+    }
+    .nav--json .nav {
+        display: none;
+        transition: 1s;
+    }
+    .nav--collapse .nav {
+        display: flex;
+    }
+    .nav--collapse.nav--json::after {
+        transform: initial;
+        transition: 1s;
     }
 }
 @media (max-width: 425px) {
