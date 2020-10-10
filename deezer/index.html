@@ -18,6 +18,11 @@
                     </div>
                     <div class="header__nav">
                         <nav>
+                            <ul class="nav nav--header">
+                                <li>
+                                    <a href="#">Mapa</a>
+                                </li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -25,28 +30,13 @@
         </div>
     </header>
     <main>
-        <div class="search">
-            <div class="container">
-                <form action="" method="post">
-                    <div class="search__grid">
-                        <div>
-                            <label for="">Nombre</label>
-                            <input type="search" name="" id="" class="form__element form__element--search" placeholder="Nombre, Ubicación, Episodio ...">
-                        </div>
-                    </div>
-                    <div class="search__grid">
-                        <button class="btn btn-primary">Buscar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
         <div class="main">
             <div class="container">
                 <div class="section">
                     <div class="sideBar">
                         <nav>
                             <h3>Filtros</h3>
-                            <ul class="nav">
+                            <ul class="nav nav--json">
                                 <li class="nav__element nav__element--title">Géneros</li>
                                 <ul class="nav" id="genre">
                                     <li class="nav__element d-none"><a href=""></a></li>
@@ -55,7 +45,26 @@
                         </nav>
                     </div>
                     <div class="main">
-                        <div id="data"></div>
+                        <div id="data">
+                            <div class="search">
+                                <form action="" method="post">
+                                    <div class="search__grid">
+                                        <div>
+                                            <label for="q">General</label>
+                                            <input type="search" name="q" id="q" class="form__element form__element--search" placeholder="Nombre de artistia, album ...">
+                                        </div>
+                                    </div>
+                                    <div class="search__grid">
+                                        <button class="btn btn-primary">Buscar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Espacio para resultados -->
+                            <div class="paginate d-none">
+                                <a href="#" class="paginate--link">Siguiente</a>
+                            </div>
+                            <!-- Usar para mostrar más resultados -->
+                        </div>
                     </div>
                 </div>
             </div>

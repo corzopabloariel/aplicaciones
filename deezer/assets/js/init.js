@@ -29,6 +29,16 @@ const init = async url => {
     }
 }
 
+const toggle = function(evt) {
+    if (this.parentElement.classList.contains("nav--collapse"))
+        this.parentElement.classList.remove("nav--collapse");
+    else
+        this.parentElement.classList.add("nav--collapse");
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
+    const nav_title = document.querySelector(".nav__element--title");
     genre(document.querySelector("#genre"));
+    if (nav_title)
+        nav_title.addEventListener("click", toggle);
 });
