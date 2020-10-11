@@ -3,16 +3,14 @@ function resultados () {
     // Validar contenido de #q
 console.log(document.getElementById('q').value);
 busqueda=parametro.get('q');
+i=parametro.get('index');
 console.log(busqueda);
 /**
  * if busqueda is not Empty -> document.getElementById('q').value = busqueda;
  */
-if(parametro.has('url')){
-    url=`https://cors-anywhere.herokuapp.com/${pg}`;
-}
-    else{
-        url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=0&limit=10?output=json`;
-    }
+    
+    url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=${i}&limit=10?output=json`;
+    console.log(url);
 $.get(url, function (result) {
     console.log(result);
     i=0;
@@ -44,13 +42,17 @@ $.get(url, function (result) {
 )
 
 })
+
 /**
  * la clase de css d-none, tiene para ocultar
  * cada vez que se haga una nueva búsqueda debería ocultarse
  */
-if(i==9){
+
+if(result.hasOwnProperty('next')||i==9){
+index=new URLSearchParams(result.next);
+index=index.get("index")
 $(".paginate").removeClass("d-none");
-$(".paginate--link").attr("href",`index.html?url="${result.next}"`);}
+$(".paginate--link").attr("href",`index.html?q=${busqueda}&index=${index}`);}
 })
 }
 
