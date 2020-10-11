@@ -1,8 +1,12 @@
 var i;
 function resultados () {
+    // Validar contenido de #q
 console.log(document.getElementById('q').value);
 busqueda=parametro.get('q');
 console.log(busqueda);
+/**
+ * if busqueda is not Empty -> document.getElementById('q').value = busqueda;
+ */
 if(parametro.has('index')){
     i=parametro.get('index');
     url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=${i}&limit=10?output=json`;
@@ -21,7 +25,7 @@ $.get(url, function (result) {
     console.log(index);
     var segundos=parseInt(obj.duration);
     
-        $("#datos").append(`
+        $("#datos_encontrados").append(`
     
 
     <div id='${obj.id}' class="music">
@@ -40,7 +44,11 @@ $.get(url, function (result) {
 )
 
 })
-$(".paginate").css("display","block");
+/**
+ * la clase de css d-none, tiene para ocultar
+ * cada vez que se haga una nueva búsqueda debería ocultarse
+ */
+$(".paginate").removeClass("d-none");
 $(".paginate").attr("href",`index.html?q=${busqueda}?index=10`);
 })
 }
@@ -72,7 +80,7 @@ function aMinutos(time) {
         console.log(index);
         var segundos=parseInt(obj.duration);
         
-            $("#datos").append(`
+            $("#datos_encontrados").append(`
         
     
         <div id='${obj.id}' class="music">
