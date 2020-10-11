@@ -1,0 +1,36 @@
+
+.music {
+    -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    min-height: 70px;
+    overflow: hidden;
+}
+.music picture {
+
+    background-color: #ccc;
+}
+.music .text {
+    width: calc(100% - 200px);
+    padding: 40px;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+.music .text a {
+    color: #3ca59d;
+}
+.music .details {
+    list-style: none;
+    display: flex;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+.music .details li + li {
+    margin-left: 10px;
+}
+.music .details li + li::before {
+    content: "/";
+    padding-right: 10px;
+}
