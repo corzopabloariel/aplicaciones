@@ -229,7 +229,11 @@ header {
 .d-none {
     display: none;
 }
-
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 @media (max-width: 1440px) {
     .container {
         width: 960px;
