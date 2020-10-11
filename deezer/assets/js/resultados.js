@@ -48,9 +48,9 @@ $.get(url, function (result) {
  * la clase de css d-none, tiene para ocultar
  * cada vez que se haga una nueva búsqueda debería ocultarse
  */
-
+if(result.total>10){
 $(".paginate").removeClass("d-none");
-$(".paginate--link").attr("href",`index.html?url="${result.next}"`);
+$(".paginate--link").attr("href",`index.html?url="${result.next}"`);}
 })
 }
 
