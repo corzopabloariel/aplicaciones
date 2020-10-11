@@ -1,7 +1,7 @@
 var i;
 function resultados () {
     console.log(document.getElementById('q').value);
-busqueda=document.getElementById('q').value;
+busqueda=parametro.get('q');
 console.log(busqueda);
 
 
