@@ -3,13 +3,13 @@ $(document).ready(function(){
     console.log(parametro);
     parametro=new URLSearchParams(parametro);
     console.log(parametro);
-        
+    
     
     if (parametro.has('q')){
         resultados();
     }
 
-    if(parametro.has('genero')){
+    if(parametro.has('categoria')){
         genero();
     }
 

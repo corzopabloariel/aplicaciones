@@ -1,6 +1,6 @@
 var i;
 function resultados () {
-    console.log(document.getElementById('q').value);
+console.log(document.getElementById('q').value);
 busqueda=parametro.get('q');
 console.log(busqueda);
 
@@ -56,3 +56,35 @@ function aMinutos(time) {
     sec_min += "" + sec;
     return sec_min+ " min";
  }
+
+ function genero(){
+     id=parametro.get("categoria")
+    url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists/?index=0&limit=10?output=json`;
+    $.get(url, function (result) {
+        console.log(url);
+        index=0;
+        index=result.total;
+        parseInt(index);
+       // result=JSON.parse(result);
+        console.log(result.data);
+      $.each(result.data,function(index,obj){
+        console.log(index);
+        var segundos=parseInt(obj.duration);
+        
+            $("#datos").append(`
+        
+    
+        <div id='${obj.id}' class="music">
+        <picture>
+        <img src='${obj.picture_medium}'>
+        </picture>
+        <div class="text">
+            <a href="">${obj.name}</a>
+            <ul class="details">
+  
+            </ul>
+        </div>
+    </div>`
+    )
+ })})
+}

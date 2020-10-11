@@ -10,7 +10,7 @@ const genre = async (elem) => {
             let target = elem.firstElementChild.cloneNode(true);
             target.classList.remove("d-none");
             target.querySelector("a").textContent = e.name;
-            target.querySelector("a").href = `https://api.deezer.com/genre/${e.id}/artists/?index=0&limit=10`;
+            target.querySelector("a").href = `index.html?categoria=${e.id}`;
 
             elem.appendChild(target);
         });
