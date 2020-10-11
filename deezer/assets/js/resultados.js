@@ -3,9 +3,13 @@ function resultados () {
 console.log(document.getElementById('q').value);
 busqueda=parametro.get('q');
 console.log(busqueda);
-
-
-url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=0&limit=10?output=json`;
+if(parametro.has('index')){
+    i=parametro.get('index');
+    url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=${i}&limit=10?output=json`;
+}
+    else{
+        url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${busqueda}&index=0&limit=10?output=json`;
+    }
 $.get(url, function (result) {
     console.log(url);
     index=0;
@@ -34,15 +38,12 @@ $.get(url, function (result) {
     </div>
 </div>`
 )
-/*if(result.hasOwnProperty('next')){
-    var total=result.total;
-    total=total/10;
-    while (index<total){
 
-    }
-}*/
-
-})})}
+})
+$(".paginate").css("display","block");
+$(".paginate").attr("href",`index.html?q=${busqueda}?index=10`);
+})
+}
 
 function aMinutos(time) {
     var hr = ~~(time / 3600);
