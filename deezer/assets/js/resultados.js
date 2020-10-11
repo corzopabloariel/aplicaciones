@@ -15,14 +15,14 @@ if(parametro.has('url')){
     }
 $.get(url, function (result) {
     console.log(result);
-    index=0;
-    console.log(result.data);
-    index=result.total;
-    parseInt(index);
+    i=0;
    // result=JSON.parse(result);
 
   $.each(result.data,function(index,obj){
- 
+    i=index++;
+    console.log(index);
+
+    console.log(i);
     var segundos=parseInt(obj.duration);
     
         $("#datos_encontrados").append(`
@@ -48,7 +48,7 @@ $.get(url, function (result) {
  * la clase de css d-none, tiene para ocultar
  * cada vez que se haga una nueva búsqueda debería ocultarse
  */
-if(result.total>10){
+if(i==9){
 $(".paginate").removeClass("d-none");
 $(".paginate--link").attr("href",`index.html?url="${result.next}"`);}
 })
