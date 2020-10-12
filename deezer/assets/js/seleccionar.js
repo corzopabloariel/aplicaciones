@@ -12,7 +12,11 @@ $(document).ready(function () {
     genero();
   }
 
-  if (parametro.has('artist')) {
+  if (parametro.has('artist') && !parametro.has('album')) {
     artista();
+  }
+
+  if (parametro.has('album')) {
+    album();
   }
 });

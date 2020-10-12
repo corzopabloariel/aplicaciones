@@ -37,7 +37,7 @@ function resultados() {
                   `<ul class="music__details">` +
                       `<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}&name=${obj.artist.name}">${obj.artist.name}</a></li>` +
                       `<li data-type="time">${aMinutos(segundos)}</li>` +
-                      `<li data-type="album"><a href="index.html?album=${obj.album.id}">${obj.album.title}</a></li>` +
+                      `<li data-type="album"><a href="index.html?album=${obj.album.id}&artist=${obj.artist.name}">${obj.album.title}</a></li>` +
                       `<li data-type="preview">` +
                           `<audio controls>` +
                               `<source src="${obj.preview}" type="audio/mpeg">` +
@@ -73,6 +73,40 @@ function aMinutos(time) {
   return sec_min + " min";
 }
 
+function album() {
+  artist = parametro.get("artist");
+  id = parametro.get("album");
+  url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}?output=json`;
+  $.get(url, function (result) {
+    document.querySelector("#datos__title").innerHTML = `Artista: <a href="index.html?artist=${result.artist.id}&name=${result.artist.name}">${result.artist.name}</a> / Album: ${result.title}`;
+    table = "<table class='tracks'>";
+      table += "<thead>";
+        table += "<tr>";
+          table += "<th style='max-width:100px; width:100px'>Nombre</th>";
+          table += "<th style='max-width:100px; width:100px'>Duración</th>";
+          table += "<th style='max-width:100px; width:100px'>Ranking</th>";
+          table += "<th>Preview</th>";
+        table += "</tr>";
+      table += "</thead>";
+    $.each(result.tracks.data, function(index,obj){
+      var segundos = parseInt(obj.duration);
+      table += `<tr>` +
+          `<td>${obj.title}</td>` +
+          `<td>${aMinutos(segundos)}</td>` +
+          `<td style="text-align: center">${obj.rank}</td>` +
+          `<td>` +
+              `<audio controls>` +
+                  `<source src="${obj.preview}" type="audio/mpeg">` +
+                  `Your browser does not support the audio element.` +
+              `</audio>` +
+          `</td>` +
+        `</tr>`;
+    });
+    table += "</table>";
+    $("#datos_encontrados").append(table).addClass("datos__encontrados--comun");
+  })
+}
+
 function artista() {
   i = 0;
   if (parametro.has('index'))
@@ -100,7 +134,7 @@ function artista() {
                   `<ul class="music__details">` +
                       //`<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}&name=${obj.artist.name}">${obj.artist.name}</a></li>` +
                       `<li data-type="time">${aMinutos(segundos)}</li>` +
-                      `<li data-type="album"><a href="index.html?album=${obj.album.id}">${obj.album.title}</a></li>` +
+                      `<li data-type="album"><a href="index.html?album=${obj.album.id}&artist=${obj.artist.name}">${obj.album.title}</a></li>` +
                       `<li data-type="preview">` +
                           `<audio controls>` +
                               `<source src="${obj.preview}" type="audio/mpeg">` +

@@ -6,6 +6,9 @@
     grid-row-gap: 20px;
     grid-column-gap: 10px;
 }
+.datos__encontrados--comun {
+    grid-template-columns: 1fr !important;
+}
 #datos__title:not(:empty) {
     margin: 20px 0;
     font-size: 23px;
@@ -92,6 +95,26 @@
     box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
+}
+
+.tracks {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracks td,
+.tracks th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+.tracks th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+.tracks audio {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
