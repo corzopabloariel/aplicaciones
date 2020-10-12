@@ -11,4 +11,8 @@ $(document).ready(function () {
   if (parametro.has('genre')) {
     genero();
   }
+
+  if (parametro.has('artist')) {
+    artista();
+  }
 });

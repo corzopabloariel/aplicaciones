@@ -10,9 +10,6 @@
     margin: 20px 0;
     font-size: 23px;
 }
-#datos__title:not(:empty)::before {
-    content: "Género: ";
-}
 .music {
     min-height: 70px;
     display: grid;
@@ -34,7 +31,6 @@
     margin-bottom: 10px;
 }
 .music__title--artist {
-    height: auto;
 }
 .music__title a {
     color: inherit;

@@ -214,6 +214,9 @@ header {
 .nav--header {
     flex-direction: row;
 }
+.nav--header li + li {
+    margin-left: 10px;
+}
 /* ---- /NAV ---- */
 .paginate {
     display: flex;
@@ -238,17 +241,31 @@ header {
     white-space: nowrap;
 }
 
-
-#search-history div:nth-child(2n){
+/* ---- */
+#search-history {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 10px;
+    margin-top: 20px;
+}
+.history {
+    border: 1px dashed #202329;
+    color: #24282f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.history:nth-child(2n){
     background-color: lightgray;
 }
-#search-history div:hover {
+.history:hover {
     background-color: darkgray;
 }
-#search-history div a {
+.history a {
     display: flex;
     justify-content: space-between;
     padding: 10px 10px;
+    color: inherit;
 }
 
 

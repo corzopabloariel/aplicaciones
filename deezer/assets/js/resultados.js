@@ -35,7 +35,7 @@ function resultados() {
               `<div class="text">` +
                   `<div class="music__title"><a href="#">${obj.title}</a></div>` +
                   `<ul class="music__details">` +
-                      `<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}">${obj.artist.name}</a></li>` +
+                      `<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}&name=${obj.artist.name}">${obj.artist.name}</a></li>` +
                       `<li data-type="time">${aMinutos(segundos)}</li>` +
                       `<li data-type="album"><a href="index.html?album=${obj.album.id}">${obj.album.title}</a></li>` +
                       `<li data-type="preview">` +
@@ -73,9 +73,61 @@ function aMinutos(time) {
   return sec_min + " min";
 }
 
+function artista() {
+  i = 0;
+  if (parametro.has('index'))
+    i = parametro.get('index');
+  id = parametro.get("artist");
+  name = parametro.get("name");
+  document.querySelector("#datos__title").textContent = "Artista: " + name;
+  url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/output=json`;
+  url2 = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/top/&index=${i}&limit=10?output=json`;
+
+  // result=JSON.parse(result);
+  $.get(url2, function (result) {
+    $.each(result.data, function(index,obj){
+      i = index ++;
+      console.log(index);
+      console.log(i);
+      var segundos = parseInt(obj.duration);
+      $("#datos_encontrados").append(
+          `<div id='${obj.id}' class="music">` +
+              `<picture>` +
+                  `<img class="music__cover" src="${obj.album.cover_medium}">` +
+              `</picture>` +
+              `<div class="text">` +
+                  `<div class="music__title"><a href="#">${obj.title}</a></div>` +
+                  `<ul class="music__details">` +
+                      //`<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}&name=${obj.artist.name}">${obj.artist.name}</a></li>` +
+                      `<li data-type="time">${aMinutos(segundos)}</li>` +
+                      `<li data-type="album"><a href="index.html?album=${obj.album.id}">${obj.album.title}</a></li>` +
+                      `<li data-type="preview">` +
+                          `<audio controls>` +
+                              `<source src="${obj.preview}" type="audio/mpeg">` +
+                              `Your browser does not support the audio element.` +
+                          `</audio>` +
+                      `</li>` +
+                  `</ul>` +
+                  `<div class="music__share">` +
+                      `<a>Para compartir</a>` +
+                  `</div>` +
+              `</div>` +
+          `</div>`
+      );
+    });
+
+    if (result.hasOwnProperty('next') || i == 9) {
+      index = new URLSearchParams(result.next);
+      index = index.get("index")
+      $(".paginate").removeClass("d-none");
+      $(".paginate--link").attr("href", `index.html?artist=${id}&name=${name}&index=${index}`);
+    }
+  });
+}
+
 function genero(){
     id = parametro.get("genre");
-    document.querySelector("#datos__title").textContent = parametro.get("name");
+    document.querySelector("#datos__title").textContent = "Género: " + parametro.get("name");
     url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists/?index=0&limit=10?output=json`;
     $.get(url, function (result) {
         console.log(url);
@@ -93,10 +145,7 @@ function genero(){
                         `<img class="music__cover" src='${obj.picture_medium}'>` +
                     `</picture>` +
                     `<div class="text">` +
-                        `<div class="music__title music__title--artist"><a href="index.html?artist=${obj.id}">${obj.name}</a></div>` +
-                        `<ul class="music__details">` +
-                            `<li class="music__track"><a href="index.html?artist=${obj.id}&top=5">Top 5</a></li>` +
-                        `</ul>` +
+                        `<div class="music__title music__title--artist"><a href="index.html?artist=${obj.id}&name=${obj.name}">${obj.name}</a></div>` +
                         `<div class="music__share">` +
                             `<a>Para compartir</a>` +
                         `</div>` +

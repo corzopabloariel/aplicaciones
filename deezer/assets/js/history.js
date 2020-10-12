@@ -12,8 +12,8 @@ function loadSearchHistory() {
         searchHistory = sortBy(searchHistory, { prop: "date", desc: true });
         historyNode.html('');
         $.each(searchHistory, function (index, search) {
-          var element = `<div>
-                            <a href="/${search.search}">
+          var element = `<div class="history">
+                            <a href="index.html${search.search}">
                               ${search.text}
                               <span>
                                 ${new Date(search.date).toLocaleString()}
