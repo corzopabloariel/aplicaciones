@@ -5,6 +5,10 @@
     grid-template-rows: 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 10px;
+
+}
+.table-responsive {
+    overflow-x: auto;
 }
 .datos__encontrados--comun {
     grid-template-columns: 1fr !important;

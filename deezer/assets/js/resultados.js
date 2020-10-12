@@ -3,6 +3,7 @@ function resultados() {
   // Validar contenido de #q
   console.log(document.getElementById('q').value);
   busqueda = parametro.get('q').trim();
+  $(".loader").show()
   if (busqueda === "")
     return;
   document.getElementById('q').value = busqueda;
@@ -52,6 +53,7 @@ function resultados() {
           `</div>`
       );
     });
+    $(".loader").hide();
 
     if (result.hasOwnProperty('next') || i == 9) {
       index = new URLSearchParams(result.next);
@@ -76,10 +78,11 @@ function aMinutos(time) {
 function album() {
   artist = parametro.get("artist");
   id = parametro.get("album");
+  $(".loader").show()
   url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}?output=json`;
   $.get(url, function (result) {
     document.querySelector("#datos__title").innerHTML = `Artista: <a href="index.html?artist=${result.artist.id}&name=${result.artist.name}">${result.artist.name}</a> / Album: ${result.title}`;
-    table = "<table class='tracks'>";
+    table = "<div class='table-responsive'><table class='tracks'>";
       table += "<thead>";
         table += "<tr>";
           table += "<th style='max-width:100px; width:100px'>Nombre</th>";
@@ -102,8 +105,9 @@ function album() {
           `</td>` +
         `</tr>`;
     });
-    table += "</table>";
+    table += "</table></div>";
     $("#datos_encontrados").append(table).addClass("datos__encontrados--comun");
+    $(".loader").hide()
   })
 }
 
@@ -113,6 +117,7 @@ function artista() {
     i = parametro.get('index');
   id = parametro.get("artist");
   name = parametro.get("name");
+  $(".loader").show()
   document.querySelector("#datos__title").textContent = "Artista: " + name;
   url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/output=json`;
   url2 = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/top/&index=${i}&limit=10?output=json`;
@@ -149,7 +154,7 @@ function artista() {
           `</div>`
       );
     });
-
+    $(".loader").hide()
     if (result.hasOwnProperty('next') || i == 9) {
       index = new URLSearchParams(result.next);
       index = index.get("index")
@@ -161,6 +166,7 @@ function artista() {
 
 function genero(){
     id = parametro.get("genre");
+    $(".loader").show()
     document.querySelector("#datos__title").textContent = "Género: " + parametro.get("name");
     url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists/?index=0&limit=10?output=json`;
     $.get(url, function (result) {
@@ -187,6 +193,7 @@ function genero(){
                 `</div>`
             );
         });
+        $(".loader").hide()
     });
 }
 
