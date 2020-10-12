@@ -29,11 +29,20 @@ function resultados () {
                         `<img class="music--cover" src="${obj.album.cover_medium}">` +
                     `</picture>` +
                     `<div class="text">` +
-                        `<div class="music--title"><a href="">${obj.title}</a></div>` +
+                        `<div class="music--title"><a href="#">${obj.title}</a></div>` +
                         `<ul class="music--details">` +
-                            `<li id='artist-"${obj.artist.id}"' data-type="artist">${obj.artist.name}</li>` +
+                            `<li id="artist-${obj.artist.id}" data-type="artist"><a href="https://api.deezer.com/artist/${obj.artist.id}">${obj.artist.name}</a></li>` +
                             `<li data-type="time">${aMinutos(segundos)}</li>` +
+                            `<li data-type="preview">` +
+                                `<audio controls>` +
+                                    `<source src="${obj.preview}" type="audio/mpeg">` +
+                                    `Your browser does not support the audio element.` +
+                                `</audio>` +
+                            `</li>` +
                         `</ul>` +
+                        `<div class="music--share">` +
+                            `<a>Para compartir</a>` +
+                        `</div>` +
                     `</div>` +
                 `</div>`
             );

@@ -28,9 +28,6 @@
 }
 .music--details {
     line-height: 18px;
-    margin-bottom: 2px;
-    max-height: 35px;
-    overflow: hidden;
     list-style: none;
 }
 .music--details li[data-type="artist"] {
@@ -41,10 +38,28 @@
     content: "de";
     margin-right: 5px;
 }
+.music--details li[data-type="preview"] {
+    margin-top: 10px;
+    background-color: #f1f3f4;
+}
+.music--details li[data-type="preview"] audio {
+    width: 100%;
+}
 .music--details li[data-type="time"] {
     color: #72727d;
     font-size: 10px;
     line-height: 18px;
+}
+.music--details li[data-type="time"]::before {
+    content: "duración";
+    margin-right: 5px;
+}
+.music--share {
+    background-color: #f1f3f4;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
 }
 .music--cover {
     width: 100%;
