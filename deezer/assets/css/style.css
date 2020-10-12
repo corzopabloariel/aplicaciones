@@ -237,6 +237,40 @@ header {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+
+#search-history div:nth-child(2n){
+    background-color: lightgray;
+}
+#search-history div:hover {
+    background-color: darkgray;
+}
+#search-history div a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+
+/* MOVILES EN HORIZONTAL Y TABLETS EN VERTICAL */
+@media (min-width: 768px){
+    
+}
+
+/* TABLETS EN HORIZONTAL Y ESCRITORIOS NORMALES */
+@media (min-width: 1024px){
+
+}
+
+/* ESCRITORIOS MUY ANCHOS */
+@media (min-width: 1200px){
+
+}
+
+
+
+
+
 @media (max-width: 1440px) {
     .container {
         width: 960px;
