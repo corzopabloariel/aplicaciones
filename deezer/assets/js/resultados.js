@@ -26,13 +26,14 @@ function resultados () {
             $("#datos_encontrados").append(
                 `<div id='${obj.id}' class="music">` +
                     `<picture>` +
-                        `<img class="music--cover" src="${obj.album.cover_medium}">` +
+                        `<img class="music__cover" src="${obj.album.cover_medium}">` +
                     `</picture>` +
                     `<div class="text">` +
-                        `<div class="music--title"><a href="#">${obj.title}</a></div>` +
-                        `<ul class="music--details">` +
-                            `<li id="artist-${obj.artist.id}" data-type="artist"><a href="https://api.deezer.com/artist/${obj.artist.id}">${obj.artist.name}</a></li>` +
+                        `<div class="music__title"><a href="#">${obj.title}</a></div>` +
+                        `<ul class="music__details">` +
+                            `<li id="artist-${obj.artist.id}" data-type="artist"><a href="index.html?artist=${obj.artist.id}">${obj.artist.name}</a></li>` +
                             `<li data-type="time">${aMinutos(segundos)}</li>` +
+                            `<li data-type="album"><a href="index.html?album=${obj.album.id}">${obj.album.title}</a></li>` +
                             `<li data-type="preview">` +
                                 `<audio controls>` +
                                     `<source src="${obj.preview}" type="audio/mpeg">` +
@@ -40,7 +41,7 @@ function resultados () {
                                 `</audio>` +
                             `</li>` +
                         `</ul>` +
-                        `<div class="music--share">` +
+                        `<div class="music__share">` +
                             `<a>Para compartir</a>` +
                         `</div>` +
                     `</div>` +
@@ -68,7 +69,8 @@ function aMinutos(time) {
 }
 
 function genero(){
-    id = parametro.get("categoria")
+    id = parametro.get("genre");
+    document.querySelector("#datos__title").textContent = parametro.get("name");
     url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists/?index=0&limit=10?output=json`;
     $.get(url, function (result) {
         console.log(url);
@@ -81,14 +83,18 @@ function genero(){
             console.log(index);
             var segundos=parseInt(obj.duration);
             $("#datos_encontrados").append(
-                `<div id='${obj.id}' class="music">` +
+                `<div id='genre-${obj.id}' class="music">` +
                     `<picture>` +
-                        `<img src='${obj.picture_medium}'>` +
+                        `<img class="music__cover" src='${obj.picture_medium}'>` +
                     `</picture>` +
                     `<div class="text">` +
-                        `<a href="">${obj.name}</a>` +
-                        `<ul class="details">` +
+                        `<div class="music__title music__title--artist"><a href="index.html?artist=${obj.id}">${obj.name}</a></div>` +
+                        `<ul class="music__details">` +
+                            `<li class="music__track"><a href="index.html?artist=${obj.id}&top=5">Top 5</a></li>` +
                         `</ul>` +
+                        `<div class="music__share">` +
+                            `<a>Para compartir</a>` +
+                        `</div>` +
                     `</div>` +
                 `</div>`
             );

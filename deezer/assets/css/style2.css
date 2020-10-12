@@ -6,6 +6,13 @@
     grid-row-gap: 20px;
     grid-column-gap: 10px;
 }
+#datos__title:not(:empty) {
+    margin: 20px 0;
+    font-size: 23px;
+}
+#datos__title:not(:empty)::before {
+    content: "Género: ";
+}
 .music {
     min-height: 70px;
     display: grid;
@@ -13,58 +20,75 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-row-gap: 5px;
-}
-.music--title {
-    font-size: 14px;
     color: #191919;
+}
+.music a {
+    color: inherit
+}
+.music__title {
+    font-size: 14px;
     line-height: 16px;
     max-height: 32px;
     height: 32px;
     overflow: hidden;
     margin-bottom: 10px;
 }
-.music--title a {
+.music__title--artist {
+    height: auto;
+}
+.music__title a {
     color: inherit;
 }
-.music--details {
+.music__details {
     line-height: 18px;
     list-style: none;
 }
-.music--details li[data-type="artist"] {
+.music__details li[data-type="album"] {
     line-height: 18px;
     font-size: 12px;
 }
-.music--details li[data-type="artist"]::before {
+.music__details li[data-type="artist"] {
+    line-height: 18px;
+    font-size: 12px;
+}
+.music__details li[data-type="artist"]::before {
     content: "de";
     margin-right: 5px;
 }
-.music--details li[data-type="preview"] {
+.music__details li[data-type="preview"] {
     margin-top: 10px;
     background-color: #f1f3f4;
 }
-.music--details li[data-type="preview"] audio {
+.music__details li[data-type="preview"] audio {
     width: 100%;
 }
-.music--details li[data-type="time"] {
+.music__details li[data-type="time"] {
     color: #72727d;
     font-size: 10px;
     line-height: 18px;
 }
-.music--details li[data-type="time"]::before {
+.music__details li[data-type="time"]::before {
     content: "duración";
     margin-right: 5px;
 }
-.music--share {
+.music__share {
     background-color: #f1f3f4;
     padding: 3px 5px;
     display: flex;
     justify-content: flex-end;
     font-size: 10px;
 }
-.music--cover {
+.music__cover {
     width: 100%;
     height: auto;
     display: block;
+}
+.music__track {
+    font-size: 14px;
+    color: #191919;
+}
+.music__track a {
+    color: inherit;
 }
 .music picture {
     background-color: #f1f1f1;

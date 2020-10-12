@@ -10,7 +10,7 @@ const genre = async (elem) => {
             let target = elem.firstElementChild.cloneNode(true);
             target.classList.remove("d-none");
             target.querySelector("a").textContent = e.name;
-            target.querySelector("a").href = `index.html?categoria=${e.id}`;
+            target.querySelector("a").href = `index.html?genre=${e.id}&name=${e.name}`;
 
             elem.appendChild(target);
         });

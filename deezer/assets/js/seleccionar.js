@@ -9,7 +9,7 @@ $(document).ready(function(){
         resultados();
     }
 
-    if(parametro.has('categoria')){
+    if(parametro.has('genre')){
         genero();
     }
 
