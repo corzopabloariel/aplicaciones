@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  iniciarMap();   
   parametro = window.location.search;
   console.log(parametro);
   parametro = new URLSearchParams(parametro);
