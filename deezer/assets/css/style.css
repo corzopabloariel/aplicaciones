@@ -394,10 +394,12 @@ span.requiredMessage {
 }
 
 #mail-data, #music-info {
-    margin-left: 12%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-#track-image {
-    margin-right: 12%;
+
+#mail-data input, #mail-data textarea {
+    width: 100%;
 }
 
 #track-image img {
