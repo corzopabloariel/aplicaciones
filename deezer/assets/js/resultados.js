@@ -47,7 +47,7 @@ function resultados() {
                       `</li>` +
                   `</ul>` +
                   `<div class="music__share">` +
-                      `<a>Para compartir</a>` +
+                      `<button class="share" data-trackId="${obj.id}">Para compartir</button>` +
                   `</div>` +
               `</div>` +
           `</div>`
@@ -60,6 +60,43 @@ function resultados() {
       index = index.get("index")
       $(".paginate").removeClass("d-none");
       $(".paginate--link").attr("href", `index.html?q=${busqueda}&index=${index}`);
+    }
+
+    if (result.total > 0){
+      $(".share").click(function(){
+        $(".loader").show();
+        $(".loader").css({position: 'fixed', top: '50%', left: '50%'});
+
+        var trackid = this.dataset.trackid;
+        var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${trackid}?output=json`;
+        $.ajax({
+          url: url,
+          type: 'GET',
+          dataType: 'json',
+          success: function(track){
+            var trackData = $('#track-data');
+            trackData.html('');
+            trackData.append(`<span>Titulo: <span id="track-title">${track.title}</span></span>
+                              <span>Duracion: <span id="track-duration">${aMinutos(parseInt(track.duration))}</span></span>
+                              <span>Artista: <span id="track-artist">${track.artist.name}</span></span>
+                              <span>Album: <span id="track-album">${track.album.title}</span></span>`);
+
+            var trackImage = $('#track-image');
+            trackImage.html('');
+            trackImage.append(`<img src="${track.album.cover_xl}" />`);
+
+            $("#modal-background").css("display","block");
+            $("#modal").css("display","block");
+          },
+          error: function(xhr, status){
+            
+          },
+          complete: function(xhr, status){
+            $(".loader").hide();
+            $(".loader").css({position: 'relative', top: '0', left: '0'});
+          }
+        })
+      });
     }
   })
 }
@@ -148,7 +185,7 @@ function artista() {
                       `</li>` +
                   `</ul>` +
                   `<div class="music__share">` +
-                      `<a>Para compartir</a>` +
+                      `<button class="share" data-trackId="${obj.id}">Para compartir</button>` +
                   `</div>` +
               `</div>` +
           `</div>`
