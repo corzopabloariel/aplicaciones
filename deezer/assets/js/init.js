@@ -43,6 +43,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
     nav_title.addEventListener("click", toggle);
 });
 
+function validateEmail(element) {
+  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(String(element.value).toLowerCase());
+}
+
+//VALIDATION MESSAGES
+function createMessage(message) {
+  let messageElement = document.createElement('span');
+  messageElement.innerText = message;
+  messageElement.classList.add('requiredMessage');
+  return messageElement;
+}
+
+function createRequiredMessage() {
+  let message = createMessage('*Este campo es requerido');
+  return message;
+}
+
+function createEmailMessage() {
+  let message = createMessage('El mail no es correcto');
+  return message;
+}
+
+//REMOVE MESSAGES FROM FORM
+function resetFormMessages(form) {
+  let requiredFields = form.getElementsByClassName("required");
+  for (field of requiredFields) {
+    field.style.border = '1px solid #ced4da';
+    let parent = field.parentElement;
+    let messages = parent.getElementsByClassName('requiredMessage');
+    let messagesCount = messages.length;
+    for (i = 0; i < messagesCount; i++) {
+      messages[0].remove();
+    }
+  }
+}
+
 // (function () {
 //   if (typeof Object.defineProperty === 'function') {
 //     try { Object.defineProperty(Array.prototype, 'sortBy', { value: sb }); } catch (e) { }
