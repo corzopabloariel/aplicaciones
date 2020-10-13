@@ -64,6 +64,9 @@ function resultados() {
 
     if (result.total > 0){
       $(".share").click(function(){
+        $(".loader").show();
+        $(".loader").css({position: 'fixed', top: '50%', left: '50%'});
+
         var trackid = this.dataset.trackid;
         var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${trackid}?output=json`;
         $.ajax({
@@ -86,7 +89,11 @@ function resultados() {
             $("#modal").css("display","block");
           },
           error: function(xhr, status){
-    
+            
+          },
+          complete: function(xhr, status){
+            $(".loader").hide();
+            $(".loader").css({position: 'relative', top: '0', left: '0'});
           }
         })
       });
