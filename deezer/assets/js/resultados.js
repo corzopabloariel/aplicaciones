@@ -178,7 +178,7 @@ function artista() {
                       `</li>` +
                   `</ul>` +
                   `<div class="music__share">` +
-                      `<a>Para compartir</a>` +
+                      `<button class="share" data-trackId="${obj.id}">Para compartir</button>` +
                   `</div>` +
               `</div>` +
           `</div>`
