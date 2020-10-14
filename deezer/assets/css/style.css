@@ -344,8 +344,8 @@ span.requiredMessage {
   
 .modal {
     display:none;
-    left: 10%;
-    right: 10%;
+    left: 5%;
+    right: 5%;
     min-width: 250px;
     width: 80%;
     height: 400px;
@@ -433,9 +433,12 @@ span.requiredMessage {
     .modal{
         width: 500px;
         height: 300px;
-        margin-left: calc(50vw - 250px);
+        margin-left: calc(50% - 250px);
         margin-top: calc(50vh - 150px);
     }
+    .modal::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 3 rgba(0,0,0,0.3); background-color: #CCCCCC; }
+    .modal::-webkit-scrollbar { width: 3px; background-color: #CCCCCC; }
+    .modal::-webkit-scrollbar-thumb { -webkit-box-shadow: inset 0 0 3 rgba(0,0,0,.3); background-color: #000; }
 
     .modal-header{
         width: 100%;
@@ -447,21 +450,11 @@ span.requiredMessage {
         margin-right: 10px;
     }
 
-    .modal-content{
-        width: 100%;
-        height: 190px;
-    }
+    .modal-content{}
 
-    .modal-content form label{
-        margin-left: 10%;
-        margin-top: 10px;
-    }
+    .modal-content form label{}
 
-    .modal-content form input{
-        width: 75%;
-        margin-left: 10%;
-        margin-top: 10px;
-    }
+    .modal-content form input{}
 
     .modal-footer{
         width: 100%;

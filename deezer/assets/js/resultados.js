@@ -62,44 +62,41 @@ function resultados() {
       $(".paginate--link").attr("href", `index.html?q=${busqueda}&index=${index}`);
     }
 
-    if (result.total > 0){
-      $(".share").click(function(){
-        $(".loader").show();
-        $(".loader").css({position: 'fixed', top: '50%', left: '50%'});
-
-        var trackid = this.dataset.trackid;
-        var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${trackid}?output=json`;
-        $.ajax({
-          url: url,
-          type: 'GET',
-          dataType: 'json',
-          success: function(track){
-            var trackData = $('#track-data');
-            trackData.html('');
-            trackData.append(`<span>Titulo: <span id="track-title">${track.title}</span></span>
-                              <span>Duracion: <span id="track-duration">${aMinutos(parseInt(track.duration))}</span></span>
-                              <span>Artista: <span id="track-artist">${track.artist.name}</span></span>
-                              <span>Album: <span id="track-album">${track.album.title}</span></span>`);
-
-            var trackImage = $('#track-image');
-            trackImage.html('');
-            trackImage.append(`<img src="${track.album.cover_xl}" />`);
-
-            $("#modal-background").css("display","block");
-            $("#modal").css("display","block");
-          },
-          error: function(xhr, status){
-            
-          },
-          complete: function(xhr, status){
-            $(".loader").hide();
-            $(".loader").css({position: 'relative', top: '0', left: '0'});
-          }
-        })
-      });
-    }
   })
 }
+$("body").on("click", ".share", function(){
+  $(".loader").show();
+  $(".loader").css({position: 'fixed', top: '50%', left: '50%'});
+
+  var trackid = this.dataset.trackid;
+  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${trackid}?output=json`;
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    success: function(track){
+      var trackData = $('#track-data');
+      trackData.html('');
+      trackData.append(`<span>Titulo: <span id="track-title">${track.title}</span></span>
+                        <span>Duracion: <span id="track-duration">${aMinutos(parseInt(track.duration))}</span></span>
+                        <span>Artista: <span id="track-artist">${track.artist.name}</span></span>
+                        <span>Album: <span id="track-album">${track.album.title}</span></span>`);
+
+      var trackImage = $('#track-image');
+      trackImage.html('');
+      trackImage.append(`<img src="${track.album.cover_xl}" />`);
+
+      $("#modal").modal("show");
+    },
+    error: function(xhr, status){
+      
+    },
+    complete: function(xhr, status){
+      $(".loader").hide();
+      $(".loader").css({position: 'relative', top: '0', left: '0'});
+    }
+  })
+});
 
 function aMinutos(time) {
   var hr = ~~(time / 3600);

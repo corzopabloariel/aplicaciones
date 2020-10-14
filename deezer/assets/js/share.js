@@ -1,7 +1,6 @@
 $(document).ready(function () {
   $(".cancel").click(function () {
-    $("#modal-background").fadeOut();
-    $("#modal").fadeOut();
+    $("#modal").modal("hide");
   });
 
   $('#sendMail').click(function () {

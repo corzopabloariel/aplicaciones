@@ -12,6 +12,49 @@
 </head>
 
 <body>
+  <!-- MODAL -->
+  <div id="modal-background"></div>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-header-title">
+        <span>Compartir música</span>
+      </div>
+      <div>
+        <a href="#" class="cancel">X</a>
+      </div>
+    </div>
+    <div class="modal-content">
+      <form action="" id="shareForm" method="post" enctype="text/plain">
+        <section id="mail-data">
+          <div>
+            <div class="form-group">
+              <label>Correo destino</label>
+              <input class="form-control required" type="email" name="receipt" placeholder="ejemplo@mail.com">
+            </div>
+            <div class="form-group">
+              <label>Asunto</label>
+              <input class="form-control required" type="text" name="subject" placeholder="Asunto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mensaje (opcional)</label>
+            <textarea class="form-control" name="message" rows="6" cols="20" placeholder="Mensaje"></textarea>
+          </div>
+        </section>
+        <section id="music-info">
+          <div id="track-data">
+          </div>
+          <div id="track-image">
+          </div>
+        </section>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button id="sendMail">Enviar</button>
+      <button class="cancel">Cancelar</button>
+    </div>
+  </div>
+  <!-- FIN MODAL -->
   <div class="header">
     <header>
       <div class="container">
@@ -77,52 +120,6 @@
               <!-- Usar para mostrar más resultados -->
             </div>
           </div>
-
-          <!-- MODAL -->
-          <div id="modal-background">
-          </div>
-          <div class="modal" id="modal">
-            <div class="modal-header">
-              <div class="modal-header-title">
-                <span>Compartir música</span>
-              </div>
-              <div>
-                <a href="#" class="cancel">X</a>
-              </div>
-            </div>
-            <div class="modal-content">
-              <form action="" id="shareForm" method="post" enctype="text/plain">
-                <section id="mail-data">
-                  <div>
-                    <div class="form-group">
-                      <label>Correo destino</label>
-                      <input class="form-control required" type="email" name="receipt" placeholder="ejemplo@mail.com">
-                    </div>
-                    <div class="form-group">
-                      <label>Asunto</label>
-                      <input class="form-control required" type="text" name="subject" placeholder="Asunto">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Mensaje (opcional)</label>
-                    <textarea class="form-control" name="message" rows="6" cols="20" placeholder="Mensaje"></textarea>
-                  </div>
-                </section>
-                <section id="music-info">
-                  <div id="track-data">
-                  </div>
-                  <div id="track-image">
-                  </div>
-                </section>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button id="sendMail">Enviar</button>
-              <button class="cancel">Cancelar</button>
-            </div>
-          </div>
-          <!-- FIN MODAL -->
-
         </div>
       </div>
     </main>

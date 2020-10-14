@@ -121,6 +121,10 @@
     width: 100%;
 }
 
+.share {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     #datos_encontrados {
         grid-template-columns: 1fr 1fr 1fr;

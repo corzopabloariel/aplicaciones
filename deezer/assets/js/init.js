@@ -29,6 +29,10 @@ const init = async url => {
   }
 }
 
+/**
+ * Cambiar visibilidad del menu lateral
+ * @param {*} evt 
+ */
 const toggle = function (evt) {
   if (this.parentElement.classList.contains("nav--collapse"))
     this.parentElement.classList.remove("nav--collapse");
@@ -138,3 +142,13 @@ var sortBy = (function () {
   };
   
 }());
+
+/**
+ * cambiar el comportamiento del elemento
+ */
+jQuery.fn.extend({
+  modal: function(action) {
+    $("#modal-background").css("display", action == "show" ? "block" : "none");
+    $(this).css("display", action == "show" ? "block" : "none");
+  }
+});
