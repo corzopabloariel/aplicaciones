@@ -18,6 +18,8 @@ $(document).ready(function () {
   } else if (parametro.has('track')) {
     track();
   } else {
+    $(".section .sideBar").addClass("d-none");
+    $(".section").addClass("section--simple")
     generos();
   }
 });

@@ -293,8 +293,6 @@ function genero(){
         index=0;
         index=result.total;
         parseInt(index);
-       // result=JSON.parse(result);
-        console.log(result.data);
         $.each(result.data,function(index,obj){
             console.log(index);
             var segundos=parseInt(obj.duration);

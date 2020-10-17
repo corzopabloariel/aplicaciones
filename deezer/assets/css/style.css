@@ -168,6 +168,13 @@ h1 {
     grid-row-gap: 20px;
     grid-column-gap: 10px;
 }
+.section--simple {
+    grid-template-columns: 1fr;
+}
+.section--simple .search {
+    width: 75%;
+    margin: auto;
+}
 .sideBar {
     position: sticky;
 }
@@ -537,6 +544,9 @@ span.requiredMessage {
     }
 }
 @media (max-width: 768px) {
+    .section--simple .search {
+        width: 100%;
+    }
     .container {
         width: 540px;
     }
