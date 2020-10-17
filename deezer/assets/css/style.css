@@ -84,17 +84,16 @@ h1 {
 /* ---- /CONTENEDOR ---- */
 
 /* ---- HEADER ---- */
-header {
-    position: -webkit-sticky;
-    position: sticky;
+.header {
+    background-color: #fafafa;
     top: 0;
     z-index: 1;
-    background-color: #fafafa;
-}
-.header {
-    background-color: rgba(255, 255, 255, .95);
+    position: -webkit-sticky;
+    position: sticky;
     border-bottom: 1px solid #e7e7e7;
     padding: 10px 0;
+    -webkit-box-shadow: 0 1px 10px 1px rgba(0,0,0,.15);
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,.15);
 }
 .header__container {
     display: grid;
@@ -124,6 +123,12 @@ header {
     padding: 10px 0;
     background-color: #24282f;
     color: #fafafa;
+}
+.footer a {
+    color: #fafafa;
+}
+.footer a + a {
+    margin-left: 20px;
 }
 /* ---- /MAIN ---- */
 
@@ -216,6 +221,19 @@ header {
 }
 .nav--header li + li {
     margin-left: 10px;
+}
+.nav--header .favoritos::after {
+    content: attr(data-favoritos);
+    margin-left: 3px;
+    font-size: 14px;
+    line-height: 14px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: red;
+    color: #fff;
 }
 /* ---- /NAV ---- */
 .paginate {

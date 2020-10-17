@@ -41,10 +41,17 @@ const toggle = function (evt) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  if (localStorage.fav !== undefined) {
+    window.fav = JSON.parse(localStorage.fav);
+    $(".nav--header .favoritos").attr("data-favoritos", window.fav.length);
+  }
   const nav_title = document.querySelector(".nav__element--title");
   genre(document.querySelector("#genre"));
   if (nav_title)
     nav_title.addEventListener("click", toggle);
+  ALUMNOS.forEach(function(alumno) {
+    $(".footer .container").append(`<a href="mailto:${alumno.email}">${alumno.nombre}</a>`)
+  })
 });
 
 function validateEmail(element) {

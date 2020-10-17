@@ -5,19 +5,19 @@ $(document).ready(function () {
   parametro = new URLSearchParams(parametro);
   console.log(parametro);
 
-  if (parametro.has('q')) {
+  if (parametro.has('favoritos')) {
+    favoritos();
+  } else if (parametro.has('q')) {
     resultados();
-  }
-
-  if (parametro.has('genre')) {
+  } else if (parametro.has('genre')) {
     genero();
-  }
-
-  if (parametro.has('artist') && !parametro.has('album')) {
+  } else if (parametro.has('artist') && !parametro.has('album')) {
     artista();
-  }
-
-  if (parametro.has('album')) {
+  } else if (parametro.has('album')) {
     album();
+  } else if (parametro.has('track')) {
+    track();
+  } else {
+    generos();
   }
 });

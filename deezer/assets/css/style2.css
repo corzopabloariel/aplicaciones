@@ -37,18 +37,25 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
+.music__title--simple {
+    height: auto;
+    margin-bottom: 0;
+}
 .music__title--artist {
 }
 .music__title a {
     color: inherit;
 }
 .music__details {
+    display: flex;
+    flex-direction: column;
     line-height: 18px;
     list-style: none;
 }
 .music__details li[data-type="album"] {
     line-height: 18px;
     font-size: 12px;
+    display: block;
 }
 .music__details li[data-type="artist"] {
     line-height: 18px;
@@ -99,8 +106,27 @@
     box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
-
+.music picture .fav {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    background-image: url(../img/favorito.ico);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    transition: 300ms;
+}
+.music picture .fav--ok,
+.music picture .fav:hover {
+    background-color: red;
+    transition: 300ms;
+}
 .tracks {
     width: 100%;
     border-collapse: collapse;
