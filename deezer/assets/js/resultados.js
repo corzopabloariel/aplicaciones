@@ -211,10 +211,13 @@ function generos() {
           html += `</div>`;
         html += `</a>`;
         $("#datos_encontrados").append(html);
-      })
-      $(".loader").hide()
+      });
     }
-  });
+  }).fail(function() {
+    $('<div class="no-content">Error al obtener resultados</div>').insertBefore("#datos_encontrados");
+  }).always(function() {
+    $(".loader").hide();
+  });;
 }
 
 function album() {

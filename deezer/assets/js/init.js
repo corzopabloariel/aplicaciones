@@ -5,6 +5,10 @@
 const genre = async (elem) => {
     let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/?output=json";
     let aux = await init(url);
+    if (aux === null){
+      $(elem).append('<div class="no-content">Error al obtener resultados</div>');
+      return;
+    }
     if (aux.data) {
         aux.data.forEach(e => {
             let target = elem.firstElementChild.cloneNode(true);
