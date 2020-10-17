@@ -1,5 +1,12 @@
 $(document).ready(function(){
   loadSearchHistory();
+  $("#paginate").pagination({
+    items: PAGINATE,
+    contents: 'pagination-contents',
+    previous: '<',
+    next: '>',
+    position: 'bottom',
+  });
 });
 
 function loadSearchHistory() {
@@ -11,6 +18,7 @@ function loadSearchHistory() {
       if (searchHistory.length > 0) {
         searchHistory = sortBy(searchHistory, { prop: "date", desc: true });
         historyNode.html('');
+        var content = $('<div class="pagination-contents"></div>');
         $.each(searchHistory, function (index, search) {
           var element = `<div class="history">
                             <a href="index.html${search.search}">
@@ -20,8 +28,9 @@ function loadSearchHistory() {
                               </span>
                             </a>
                          </div>`;
-          historyNode.append(element);
+          content.append(element);
         });
+        historyNode.append(content);
       }
     }
   }
