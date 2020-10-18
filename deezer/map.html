@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://e-cdns-files.dzcdn.net/cache/images/common/favicon/favicon.a6a53d55264841165a904dbea19d5d73.ico" rel="shortcut icon" type="image/x-icon">
+  <title>Deezer API</title>
+  <link rel="stylesheet" href="assets/css/style2.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <div class="container">
+        <div class="header__container">
+          <div class="header__logo">
+            <a href="index.html"><img src="assets/img/logo.png" alt="Deezer" srcset=""></a>
+          </div>
+          <div class="header__nav">
+            <nav>
+              <ul class="nav nav--header">
+                <li>
+                  <a href="history.html">Historial</a>
+                </li>
+                <li>
+                  <a href="index.html?favoritos=1" class="favoritos" data-favoritos="0">Mis favoritos</a>
+                </li>
+                <li>
+                  <a href="map.html">Mapa</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="main">
+    <main>
+      <div class="container">
+        <div class="section">
+          <div class="sideBar">
+            <nav>
+              <h3>Filtros</h3>
+              <ul class="nav nav--json">
+                <li class="nav__element nav__element--title">Géneros</li>
+                <ul class="nav" id="genre">
+                  <li class="nav__element d-none"><a href=""></a></li>
+                </ul>
+              </ul>
+            </nav>
+          </div>
+          <div class="main">
+            <div id="datos">
+              <div class="search">
+                <form action="index.html">
+                  <div class="search__grid">
+                    <div>
+                      <label for="q">General</label>
+                      <input type="search" name="q" id="q" class="form__element form__element--search"
+                        placeholder="Nombre de artistia, album ...">
+                      <input type="number" style="display:none" name="index" value="0">
+                    </div>
+                  </div>
+                  <div class="search__grid">
+                    <button id="btn-search" class="btn btn-primary">Buscar</button>
+                  </div>
+                </form>
+              </div>
+              <div id="mapid">
+              </div>
+              <!-- Espacio para resultados -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="footer">
+    <footer>
+      <div class="container"></div>
+    </footer>
+  </div>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/init.js"></script>
+  <script src="assets/js/history.js"></script>
+  <script src="assets/js/pagination.js"></script>
+
+</body>
+
+</html>
