@@ -64,6 +64,10 @@ function validateEmail(element) {
 }
 
 //VALIDATION MESSAGES
+/**
+ * crea elemento mensaje en validaciones
+ * @param {String} message Texto
+ */
 function createMessage(message) {
   let messageElement = document.createElement('span');
   messageElement.innerText = message;
@@ -71,17 +75,27 @@ function createMessage(message) {
   return messageElement;
 }
 
+/**
+ * crea mensaje generico de campo obligatorio
+ */
 function createRequiredMessage() {
   let message = createMessage('*Este campo es requerido');
   return message;
 }
 
+/**
+ * crea mensaje de formato de mail incorrecto
+ */
 function createEmailMessage() {
   let message = createMessage('El mail no es correcto');
   return message;
 }
 
 //REMOVE MESSAGES FROM FORM
+/**
+ * quita los mensaje de validaciones en un formulario
+ * @param {Node} form Formulario
+ */
 function resetFormMessages(form) {
   let requiredFields = form.getElementsByClassName("required");
   for (field of requiredFields) {

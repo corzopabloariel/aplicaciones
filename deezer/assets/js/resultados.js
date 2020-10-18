@@ -16,7 +16,7 @@ const cancion = function(obj, artista = 1, musica = 1, append = "", albumNombreC
   html += `<li data-type="album"><a title="${obj.album.title}" href="index.html?album=${obj.album.id}&artist=${obj.artist.name}">${albumNombreCompleto ? obj.album.title : "Album"}</a></li>`;
   html += append;
   html += `<li data-type="preview">`;
-  html += `<audio controls>`;
+  html += `<audio controls data-id="${obj.id}">`;
   html += `<source src="${obj.preview}" type="audio/mpeg">`;
   html += `Your browser does not support the audio element.`;
   html += `</audio>`;
@@ -49,7 +49,7 @@ function resultados() {
   console.log(url);
   $.get(url, function (result) {
     if (i == '0') {
-      saveSearchHistory(busqueda, window.location.search);
+      saveSearchHistory(`<i class="fas fa-search"></i> ${busqueda}`, window.location.search);
     }
 
     console.log(result);
@@ -195,6 +195,18 @@ function track() {
   });
 }
 
+/**
+ * obtiene los datos json de una cancion
+ * @param {Number} id ID de la cancion
+ */
+async function trackById(id){
+  url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}?output=json`;
+  var result = await $.getJSON(url, function (result) {
+    return result;
+  });
+  return result;
+}
+
 function generos() {
   $(".loader").show()
   url=`https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre?output=json`;
@@ -243,7 +255,7 @@ function album() {
           `<td>${aMinutos(segundos)}</td>` +
           `<td style="text-align: center">${obj.rank}</td>` +
           `<td>` +
-              `<audio controls>` +
+              `<audio controls data-id="${obj.id}">` +
                   `<source src="${obj.preview}" type="audio/mpeg">` +
                   `Your browser does not support the audio element.` +
               `</audio>` +
@@ -317,6 +329,11 @@ function genero(){
     });
 }
 
+/**
+ * guarda en el LocalStorage una busqueda realizada
+ * @param {String} text Texto
+ * @param {String} search Url de la busqueda
+ */
 function saveSearchHistory(text, search) {
   if (text.trim() !== '') {
     if (typeof (Storage) !== 'undefined') {

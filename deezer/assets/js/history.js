@@ -22,7 +22,9 @@ function loadSearchHistory() {
         $.each(searchHistory, function (index, search) {
           var element = `<div class="history">
                             <a href="index.html${search.search}">
-                              ${search.text}
+                              <span>
+                                ${search.text}
+                              </span>
                               <span>
                                 ${new Date(search.date).toLocaleString()}
                               </span>
