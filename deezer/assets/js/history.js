@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  iniciarMap();
+  
   loadSearchHistory();
   $("#paginate").pagination({
     items: PAGINATE,
